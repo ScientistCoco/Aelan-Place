@@ -1,0 +1,43 @@
+$footerFontColor: rgb(190, 190, 190);
+
+.footerContainer {
+  background-color: rgb(39, 39, 39);
+  color: $footerFontColor;
+  height: 100%;
+  padding: 50px 80px;
+
+  &_contacts {
+    &_header {
+      color: white;
+      font-style: italic;
+    }
+  }
+
+  &_section {
+    display: flex;
+    
+    &_item {
+      flex: 0.2;
+    }
+  }
+
+  &_horizontalline {
+    border-bottom: 0.1em solid $footerFontColor;
+    margin: 40px 0;
+  }
+
+  &_footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &_links {
+      font-size: 1.5em;
+      
+      >* {
+       margin: 0 10px; 
+       cursor: pointer;
+      }
+    }
+  }
+}

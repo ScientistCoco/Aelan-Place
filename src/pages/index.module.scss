@@ -1,0 +1,51 @@
+@import '../styles/breakpoints.scss';
+@import '../styles/fonts.scss';
+
+.introContainer {
+  position: relative;
+  
+  &_main {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &_title {
+    font-weight: bolder;
+    font-style: italic;
+    font-family: $mainFontFamily;
+    color: white;
+    font-size: 2em;
+
+    @include lg {
+      font-size: 4em;
+    }
+  }
+
+  &_subtitle {
+    font-size: 1em;
+    font-family: $mainFontFamily;
+    color: white;
+
+    @include lg {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.introContainer_buttons {
+  display: flex;
+  flex-direction: column;
+  
+  @include lg {
+    display: block;
+  }
+  
+  >* {
+    margin: 0 5px;
+    margin-bottom: 16px;
+    font-family: $mainFontFamily;
+  }
+}
