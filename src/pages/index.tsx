@@ -80,7 +80,7 @@ class IndexPage extends React.Component<any, any> {
           {!menuToggled &&
             <>
               <div className={styles.introContainer}>          
-                <Image/>
+                <Image filename="palm-trees1.png" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
                 <div className={styles.introContainer_main}>
                   <h1 className={styles.introContainer_title}>Welcome to Aelan Place</h1>
                   <p className={styles.introContainer_subtitle}>Cosy tropical apartments</p>
@@ -93,7 +93,6 @@ class IndexPage extends React.Component<any, any> {
               <Attractions show={showAttractions} htmlRef={this.attractionsRef}/>
               <Photos show={showPhotos} htmlRef={this.photosRef}/>
               <Reviews show={showReviews} htmlRef={this.reviewsRef}/>
-              <Link to="/page-2/">Go to page 2</Link>
               <Footer />
             </>
           } 

@@ -12,7 +12,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
-export const Layout = ({ children }: any, props: any) => {
+interface ILayout { 
+  className?: string;
+  children?: React.ReactNode;
+}
+
+
+export const Layout = (props: ILayout) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +31,7 @@ export const Layout = ({ children }: any, props: any) => {
 
   return (
     <div {...props}>
-      <main>{children}</main>
+      <main>{props.children}</main>
     </div>
   )
 }

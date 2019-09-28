@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "gatsby";
 import * as styles from "./modal.module.scss";
 
-interface Modal {
+interface IModal {
   showModal: boolean;
 }
 
-export const Modal = (props: Modal) => (
+export const Modal = (props: IModal) => (
   <div className={`${styles.menuModal} ${props.showModal ? styles.menuModal_open : styles.menuModal_closed}`}>
     <div className={styles.menuContainer}>
       <ol className={styles.menuActions}>
-        <li>Home</li>
+        <Link to="/">Home</Link>        
         <li>About</li>
-        <li>Apartments</li>
+        <Link to="/apartments/">Apartments</Link>
       </ol>
       <div className={styles.menuContacts}>
         <div className={styles.menuContacts_Info}>

@@ -1,27 +1,7 @@
 import React from 'react';
-import { Carousel, Icon, Skeleton } from 'antd';
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { Carousel, Skeleton } from 'antd';
+import { Image } from "../components";
 import * as styles from "./photos.module.scss";
-
-const Image = (imgSrc: any) => {  
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "slider-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid
-            presentationWidth
-          }
-        }
-      }
-    }
-  `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} 
-  style={{ objectFit: 'contain' }} 
-  />
-}
 
 interface IPhotos {
   htmlRef?: React.Ref<any>;
@@ -52,17 +32,14 @@ export class Photos extends React.Component<IPhotos> {
             autoplay            
           >
             <Skeleton active loading={false}>
-              <Image />
+              <Image filename="slider-1.jpg" />
             </Skeleton>      
             <Skeleton active loading={false}>
-              <Image />
+              <Image filename="slider-2.jpg"/>
             </Skeleton>      
             <Skeleton active loading={false}>
-              <Image />
-            </Skeleton>      
-            <Skeleton active loading={false}>
-              <Image />
-            </Skeleton>      
+              <Image filename="slider-3.jpg"/>
+            </Skeleton>         
           </Carousel>          
         </div>
       </div>

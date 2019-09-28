@@ -1,0 +1,106 @@
+@import '../styles/breakpoints.scss';
+@import '../styles/fonts.scss';
+
+.apartments {
+  height: 100%;
+}
+
+.apartmentsIntro {
+  &_container {
+    position: relative;
+  }
+
+  &_text {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &_header {
+    font-weight: bolder;
+    font-family: $mainFontFamily;
+    color: white;
+    font-size: 2em;
+
+    @include lg {
+      font-size: 4em;
+    }
+  }
+
+  &_subtitle {
+    font-size: 1em;
+    font-family: $mainFontFamily;
+    color: white;
+
+    @include lg { 
+      font-size: 1.5em;
+    }
+  }
+}
+
+.apartmentsRoom {
+  &_container {
+    display: flex;
+
+    &_item {
+      flex: 1;   
+      position: relative;   
+      transition: opacity 0.3s ease-in-out;
+
+      &_title {
+        &__show {
+          opacity: 1;
+          animation: slideIn 0.5s ease-in-out;
+        }
+
+        &__hide {
+          opacity: 0;
+          animation: slideOut 0.5s ease-in-out;
+        }
+      }
+
+      &_image {
+        &__show {
+          opacity: 1;
+        }
+
+        &__hide {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &_content {
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: $mainFontFamily;
+
+    &_header {
+      font-family: $mainFontFamily;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);  
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
