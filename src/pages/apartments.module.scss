@@ -42,8 +42,10 @@
 
 .apartmentsRoom {
   &_container {
-    display: flex;
-
+    @include lg {
+      display: flex;
+    }
+    
     &_item {
       flex: 1;   
       position: relative;   
@@ -74,11 +76,17 @@
   }
 
   &_content {
-    left: 50%;
-    top: 50%;
-    width: 80%;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    margin: 50px;
+
+    @include lg {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      width: 80%;
+      margin: 0;
+    }
+
     font-family: $mainFontFamily;
 
     &_header {

@@ -61,13 +61,13 @@ class Apartments extends React.Component<any, any> {
         <div className={styles.apartmentsRoom_container} ref={this.apartmentRefs[index]}>              
           {index % 2 === 0 ? 
           <>
-          {this.renderApartmentImage(apartment.filename, showApartment[index])}
-          {this.renderApartmentTitle(apartment.name, showApartment[index])}
+            {this.renderApartmentTitle(apartment.name, showApartment[index])}
+            {this.renderApartmentImage(apartment.filename, showApartment[index])}
           </>
           : 
           <>
-            {this.renderApartmentTitle(apartment.name, showApartment[index])}
             {this.renderApartmentImage(apartment.filename, showApartment[index])}
+            {this.renderApartmentTitle(apartment.name, showApartment[index])}
           </>        
           }
         </div>      
