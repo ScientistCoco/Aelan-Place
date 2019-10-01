@@ -1,0 +1,77 @@
+@import '../styles/breakpoints.scss';
+@import '../styles/fonts.scss';
+
+.about {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.aboutIntro {
+  &_container {
+    position: relative;
+  }
+
+  &_text {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &_header {
+    font-weight: bolder;
+    font-family: $mainFontFamily;
+    color: white;
+    font-size: 2em;
+
+    @include lg {
+      font-size: 4em;
+    }
+  }
+}
+
+.aboutContent {
+  font-family: $mainFontFamily;
+  
+  &_container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    
+    @include lg {
+      margin: 50px 90px;
+      flex-direction: row;
+    }
+  }
+  
+  &_item {
+    padding: 20px 0;
+    position: relative;
+    flex: 1;
+        
+    @include lg {
+      padding: 0px 20px;
+      flex-direction: row;
+    }
+  }
+
+  &_header {
+    font-family: $mainFontFamily;
+  }
+
+  &_media {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
+
+  &_iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

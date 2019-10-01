@@ -10,9 +10,9 @@ export const Modal = (props: IModal) => (
   <div className={`${styles.menuModal} ${props.showModal ? styles.menuModal_open : styles.menuModal_closed}`}>
     <div className={styles.menuContainer}>
       <ol className={styles.menuActions}>
-        <Link to="/">Home</Link>        
-        <li>About</li>
-        <Link to="/apartments/">Apartments</Link>
+        <li className={styles.menuActions_li}><Link to="/">Home</Link></li>
+        <li className={styles.menuActions_li}><Link to="/about/">About</Link></li>
+        <li className={styles.menuActions_li}><Link to="/apartments/">Apartments</Link></li>
       </ol>
       <div className={styles.menuContacts}>
         <div className={styles.menuContacts_Info}>

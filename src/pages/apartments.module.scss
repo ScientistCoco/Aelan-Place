@@ -3,6 +3,7 @@
 
 .apartments {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .apartmentsIntro {
@@ -49,17 +50,17 @@
     &_item {
       flex: 1;   
       position: relative;   
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.3s cubic-bezier(.8,.11,.66,1.18);
 
       &_title {
         &__show {
           opacity: 1;
-          animation: slideIn 0.5s ease-in-out;
+          animation: slideIn 0.5s cubic-bezier(.8,.11,.66,1.18);
         }
 
         &__hide {
           opacity: 0;
-          animation: slideOut 0.5s ease-in-out;
+          animation: slideOut 0.5s cubic-bezier(.8,.11,.66,1.18);
         }
       }
 
@@ -77,6 +78,7 @@
 
   &_content {
     margin: 50px;
+    font-family: $mainFontFamily;
 
     @include lg {
       position: absolute;
@@ -87,7 +89,6 @@
       margin: 0;
     }
 
-    font-family: $mainFontFamily;
 
     &_header {
       font-family: $mainFontFamily;

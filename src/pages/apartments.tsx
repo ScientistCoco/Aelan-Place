@@ -104,7 +104,7 @@ class Apartments extends React.Component<any, any> {
   render() {
     const { menuToggled } = this.state;
 
-    return (
+    return (  
       <Layout className={styles.apartments}>
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
         <Modal showModal={menuToggled} />      

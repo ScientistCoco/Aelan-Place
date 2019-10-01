@@ -4,10 +4,15 @@
 .menuContainer {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   left: 50%;
   top: 50%;    
   transform: translate(-50%, -50%);
+
+  @include md {
+    flex-direction: row;
+  }
 }
 
 .menuActions {
@@ -16,7 +21,7 @@
   font-weight: bold;
   font-family: $mainFontFamily;
 
-  > * {
+  &_li * {
     cursor: pointer;
     color: black;
   }
