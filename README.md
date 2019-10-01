@@ -1,3 +1,6 @@
+**Deployment**:  
+[![CircleCI](https://circleci.com/gh/ScientistCoco/Aelan-Place/tree/master.svg?style=svg)](https://circleci.com/gh/ScientistCoco/Aelan-Place/tree/master)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
