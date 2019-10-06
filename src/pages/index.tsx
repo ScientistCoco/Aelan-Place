@@ -85,7 +85,7 @@ class IndexPage extends React.Component<any, any> {
                   <h1 className={styles.introContainer_title}>Welcome to Aelan Place</h1>
                   <p className={styles.introContainer_subtitle}>Cosy tropical apartments</p>
                   <div className={styles.introContainer_buttons}>
-                    <Button type="primary" shape="round" size="large">Explore the beauty</Button>
+                    <Button type="primary" shape="round" size="large"><Link to="/apartments/">Explore the beauty</Link></Button>
                     <Button ghost shape="round" size="large">Contact us</Button>
                   </div>
                 </div>

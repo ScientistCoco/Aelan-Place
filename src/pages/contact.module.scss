@@ -1,0 +1,68 @@
+@import '../styles/breakpoints.scss';
+@import '../styles/fonts.scss';
+
+.contact {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.contactIntro {
+  &_container {
+    position: relative;
+  }
+
+  &_text {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &_header {
+    font-weight: bolder;
+    font-family: $mainFontFamily;
+    color: white;
+    font-size: 2em;
+
+    @include lg {
+      font-size: 4em;
+    }
+  }
+
+  &_subtitle {
+    font-size: 1em;
+    font-family: $mainFontFamily;
+    color: white;
+
+    @include lg { 
+      font-size: 1.5em;
+    }
+  }
+}
+
+.contactForm {
+  &_container {
+    background-color: #4185c3;
+    height: 600px;
+    position: relative;
+  }
+
+  &_form {
+    background-color: white;
+    width: 50%;
+    left: 50%;
+    top: 40%;
+    position: absolute;
+    padding: 50px 40px;
+    transform: translate(-80%, -50%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  &_field {
+    padding: 5px 0;
+    font-family: $mainFontFamily;
+    color: #868686;
+    line-height: 2;
+  }
+}
