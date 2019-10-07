@@ -8,11 +8,11 @@ const LoremIpsumText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit
 
 const apartments = [
   {
-    filename: "hero_2.jpg",
+    filename: "aelan_1.jpg",
     name: "Aelan Place #5"
   },
   {
-    filename: "hero_1.jpg",
+    filename: "aelan_2.jpg",
     name: "Aelan Place #6"
   }
 ];
@@ -111,7 +111,7 @@ class Apartments extends React.Component<any, any> {
         {!menuToggled && 
         <>
           <div className={styles.apartmentsIntro_container}>
-            <Image filename="hero_2.jpg" imgStyle={{ filter: 'brightness(0.5)' }} style={{ height: '50vh' }}/>
+            <Image filename="aelan_3.jpg" imgStyle={{ filter: 'brightness(0.5)' }} style={{ height: '50vh' }}/>
             <div className={styles.apartmentsIntro_text}>
               <h1 className={styles.apartmentsIntro_header}>Apartments</h1>
               <p className={styles.apartmentsIntro_subtitle}>Enjoy your stay</p>

@@ -43,20 +43,31 @@
 
 .contactForm {
   &_container {
-    background-color: #4185c3;
-    height: 600px;
+    background-color: #8BC34A;
     position: relative;
+    height: 850px;
+
+    @include lg {
+      height: 600px;
+    }
   }
 
   &_form {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     background-color: white;
-    width: 50%;
-    left: 50%;
-    top: 40%;
     position: absolute;
     padding: 50px 40px;
-    transform: translate(-80%, -50%);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transform: translate(-50%, -80%);
+    left: 50%;
+    top: 50%;
+    width: 90%;
+
+    @include lg {
+      width: 40%;
+      left: 45%;
+      top: 40%;
+      transform: translate(-80%, -50%);
+    }
   }
 
   &_field {
@@ -64,5 +75,31 @@
     font-family: $mainFontFamily;
     color: #868686;
     line-height: 2;
+  }
+
+  &_details {
+    color: white;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    margin: 0 30px;
+    
+    @include lg {
+      position: inherit;
+      padding: 100px 100px;
+      margin: 0 100px;
+      width: 35%;
+    }
+
+    &_label {
+      font-size: 1em;
+      opacity: 0.5;
+      font-family: "Mukta Mahee", arial, sans-serif;
+    }
+
+    &_text {
+      font-size: 2em;
+      font-weight: 300;
+    }
   }
 }

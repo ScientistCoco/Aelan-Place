@@ -21,7 +21,11 @@ class Contact extends React.Component<any, any> {
   }
 
   toggleMenu = () => {
+    const { menuToggled } = this.state;
 
+    this.setState({
+      menuToggled: !menuToggled
+    })
   }
 
   handleEnquiryChange = (value: string) => {    
@@ -36,9 +40,11 @@ class Contact extends React.Component<any, any> {
     return (
       <Layout className={styles.contact}>
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
+        <Modal showModal={menuToggled} />
+        {!menuToggled && 
         <>
           <div className={styles.contactIntro_container}>
-            <Image filename="hero_2.jpg" imgStyle={{ filter: 'brightness(0.5)' }} style={{ height: '50vh' }}/>
+            <Image filename="aelan_4.jpg" imgStyle={{ filter: 'brightness(0.5)' }} style={{ height: '50vh' }}/>
             <div className={styles.contactIntro_text}>
               <h1 className={styles.contactIntro_header}>Contact Us</h1>
               <p className={styles.contactIntro_subtitle}>Fill in the fields below and we'll get back to you.</p>
@@ -118,9 +124,16 @@ class Contact extends React.Component<any, any> {
                 <Button type="primary" shape="round">Send message</Button>
               </Form>
             </Formik>
+            <div className={styles.contactForm_details}>
+              <p className={styles.contactForm_details_label}>ADDRESS</p>
+              <p className={styles.contactForm_details_text}>98 West 21th Street, Suite 217 Place A</p>
+              <p className={styles.contactForm_details_label}>EMAIL</p>
+              <p className={styles.contactForm_details_text}>info@yourdomain.com</p>
+            </div>
           </div>
           <Footer />
         </>
+        }
       </Layout>
     )
   }
