@@ -18,7 +18,8 @@ jobs:
     filters:
       branches:
         only: master
-
+    working_directory: ~/client
+    
     steps:     
       - add_ssh_keys:
           fingerprints:
@@ -27,9 +28,6 @@ jobs:
 
       - checkout
 
-      # change to client directory 
-      - run : cd client
-      
       # Download and cache dependencies
       - restore_cache:
           keys:
