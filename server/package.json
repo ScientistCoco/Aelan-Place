@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec ts-node index.ts",
+    "debug": "node --inspect -r ts-node/register index.ts",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.17",
+    "body-parser": "^1.19.0",
+    "date-fns": "^2.8.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "got": "^10.0.4",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  }
+}

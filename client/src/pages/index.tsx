@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import * as styles from "./index.module.scss";
 
 import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer } from "../components";
+import { post } from "../helpers";
 
 class IndexPage extends React.Component<any, any> {  
   private attractionsRef: React.RefObject<HTMLDivElement>;
@@ -64,6 +65,19 @@ class IndexPage extends React.Component<any, any> {
     }    
   }
 
+  // fetchAvailabilities = async () => {    
+  //   const data = { 
+  //     listing_id: "39097100",
+  //     month: "12",
+  //     year: "2020",
+  //     count: "3"
+  //   }
+
+  //   const res = await (await post("/api/availabilities", data, {})).json();
+
+  //   console.log(res);
+  // }
+
   componentWillUnmount() {
     if (typeof window !== 'undefined') {
       window.removeEventListener('scroll', this.handleScroll);
@@ -87,6 +101,7 @@ class IndexPage extends React.Component<any, any> {
                   <div className={styles.introContainer_buttons}>
                     <Button type="primary" shape="round" size="large"><Link to="/apartments">Explore the beauty</Link></Button>
                     <Button ghost shape="round" size="large"><Link to="/contact">Contact us</Link></Button>
+                    {/* <Button type="primary" shape="round" size="large" onClick={this.fetchAvailabilities}>Test</Button> */}
                   </div>
                 </div>
               </div>

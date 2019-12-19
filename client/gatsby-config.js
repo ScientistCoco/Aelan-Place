@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-sass`,    
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-antd`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,4 +36,8 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  proxy: {
+    prefix: "/api",
+    url: "http://localhost:3000",
+  },
 }
