@@ -24,10 +24,10 @@ collections:
         name: Homepage
         file: content/CMS.json
         fields: 
-          - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
-          - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
-          - { name: exploreBtn, label: exploreBtn, widget: string, default: Explore the beauty }
-          - { name: contactBtn, label: contactBtn, widget: string, default: Contact us }
+          - { name: landingTitle, label: landingTitle, widget: string }
+          - { name: landingSubtitle, label: landingSubtitle, widget: string }
+          - { name: exploreBtn, label: exploreBtn, widget: string }
+          - { name: contactBtn, label: contactBtn, widget: string }
           # - { name: visitTitle, label: visitTitle, widget: string, default: You can visit }
           # - name: visitLocations
           #   label: visitLocations
