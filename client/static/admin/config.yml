@@ -5,12 +5,45 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
-    create: true
+  - name: homepage
+    label: homepage
+    folder: static/admin/index
+    create: false
+    slug: "{{slug}}"
+    identifier_field: landingTitle
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
+      - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
+      - { name: exploreBtn, label: exploreBtn, widget: string, default: Explore the beauty }
+      - { name: contactBtn, label: contactBtn, widget: string, default: Contact us }
+  - label: pages
+    name: pages
+    files:
+      - label: Homepage
+        name: Homepage
+        file: _data/cms.json
+        fields: 
+          - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
+          - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
+          - { name: exploreBtn, label: exploreBtn, widget: string, default: Explore the beauty }
+          - { name: contactBtn, label: contactBtn, widget: string, default: Contact us }
+          # - { name: visitTitle, label: visitTitle, widget: string, default: You can visit }
+          # - name: visitLocations
+          #   label: visitLocations
+          #   widget: object
+          #   fields: 
+          #     - {
+          #         label: locationName,
+          #         name: locationName,
+          #         widget: string
+          #       }
+          #     - { 
+          #         label: locationLink,
+          #         name: locationLink,
+          #         widget: string
+          #       }
+          #     - {
+          #         label: locationImage,
+          #         name: locationImage,
+          #         widget: image
+          #       }
