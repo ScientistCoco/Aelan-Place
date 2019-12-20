@@ -6,23 +6,23 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: homepage
-    label: homepage
-    folder: static/admin/index
-    create: false
-    slug: "{{slug}}"
-    identifier_field: landingTitle
-    fields:
-      - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
-      - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
-      - { name: exploreBtn, label: exploreBtn, widget: string, default: Explore the beauty }
-      - { name: contactBtn, label: contactBtn, widget: string, default: Contact us }
+  # - name: homepage
+  #   label: homepage
+  #   folder: static/admin/index
+  #   create: false
+  #   slug: "{{slug}}"
+  #   identifier_field: landingTitle
+  #   fields:
+  #     - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
+  #     - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
+  #     - { name: exploreBtn, label: exploreBtn, widget: string, default: Explore the beauty }
+  #     - { name: contactBtn, label: contactBtn, widget: string, default: Contact us }
   - label: pages
     name: pages
     files:
       - label: Homepage
         name: Homepage
-        file: _data/cms.json
+        file: content/CMS.json
         fields: 
           - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
           - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
