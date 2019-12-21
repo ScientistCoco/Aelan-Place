@@ -5,6 +5,7 @@ import * as styles from "./index.module.scss";
 
 import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer } from "../components";
 import { post } from "../helpers";
+import CMS from "../../content/CMS.json";
 
 class IndexPage extends React.Component<any, any> {  
   private attractionsRef: React.RefObject<HTMLDivElement>;
@@ -96,11 +97,11 @@ class IndexPage extends React.Component<any, any> {
               <div className={styles.introContainer}>          
                 <Image filename="palm-trees1.png" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
                 <div className={styles.introContainer_main}>
-                  <h1 className={styles.introContainer_title}>Welcome to Aelan Place</h1>
-                  <p className={styles.introContainer_subtitle}>Cosy tropical apartments</p>
+                  <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>
+                  <p className={styles.introContainer_subtitle}>{CMS.landingSubtitle}</p>
                   <div className={styles.introContainer_buttons}>
-                    <Button type="primary" shape="round" size="large"><Link to="/apartments">Explore the beauty</Link></Button>
-                    <Button ghost shape="round" size="large"><Link to="/contact">Contact us</Link></Button>
+                    <Button type="primary" shape="round" size="large"><Link to="/apartments">{CMS.exploreBtn}</Link></Button>
+                    <Button ghost shape="round" size="large"><Link to="/contact">{CMS.contactBtn}</Link></Button>
                     {/* <Button type="primary" shape="round" size="large" onClick={this.fetchAvailabilities}>Test</Button> */}
                   </div>
                 </div>
