@@ -22,7 +22,7 @@ collections:
     files:
       - label: Homepage
         name: Homepage
-        file: content/CMS.json
+        file: client/content/CMS.json
         fields: 
           - { name: landingTitle, label: landingTitle, widget: string }
           - { name: landingSubtitle, label: landingSubtitle, widget: string }
