@@ -27,7 +27,8 @@
 }
 
 .reviewsComment {
-  padding: 0 60px;
+  max-width: 100em;
+  padding: 0 2em;
 
   &_container {
     display: flex;

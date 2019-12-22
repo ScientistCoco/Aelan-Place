@@ -18,6 +18,10 @@ $footerFontColor: rgb(190, 190, 190);
     
     &_item {
       flex: 0.2;
+
+      &_link {
+        color: inherit;
+      }
     }
   }
 

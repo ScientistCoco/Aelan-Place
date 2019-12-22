@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel, Skeleton } from 'antd';
 import { Image } from "../components";
+import CMS from "../../content/homepageCMS.json";
 import * as styles from "./photos.module.scss";
 
 interface IPhotos {
@@ -15,14 +16,15 @@ export class Photos extends React.Component<IPhotos> {
 
   render() {
     const { show } = this.props;
+    const { photosSection } = CMS;
 
     return (
       <div className={`${styles.photosContainer} ${show ? styles.photosContainer__show : styles.photosContainer__hide}`} 
         ref={this.props.htmlRef}
       >
         <div className={styles.photosContainer_info}>
-          <h1 className={styles.photosContainer_header}>A gorgeous place to enjoy your holiday</h1>
-          <p className={styles.photosContainer_description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto doloremque quo odio repudiandae sunt eveniet? Enim facilis laborum voluptate id porro, culpa maiores quis, blanditiis laboriosam alias. Sed.</p>
+          <h1 className={styles.photosContainer_header}>{photosSection.title}</h1>
+          <p className={styles.photosContainer_description}>{photosSection.subtitle}</p>
         </div>
         <div className={styles.photosContainer_carousel}>          
           <Carousel className={styles.photosContainer_carousel_photos} 
@@ -32,13 +34,13 @@ export class Photos extends React.Component<IPhotos> {
             autoplay            
           >
             <Skeleton active loading={false}>
-              <Image filename="slider-1.jpg" />
+              <Image filename="aelan_1.jpg" />
             </Skeleton>      
             <Skeleton active loading={false}>
-              <Image filename="slider-2.jpg"/>
+              <Image filename="aelan_6.jpg"/>
             </Skeleton>      
             <Skeleton active loading={false}>
-              <Image filename="slider-3.jpg"/>
+              <Image filename="aelan_4.jpg"/>
             </Skeleton>         
           </Carousel>          
         </div>

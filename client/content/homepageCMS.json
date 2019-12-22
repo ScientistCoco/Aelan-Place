@@ -30,26 +30,20 @@
   },
   "photosSection": {
     "title": "A gorgeous place to enjoy your holiday",
-    "subtitle": "Located at the centre of Luganville, Vanuatu. We offer rooms to suit your basic holiday needs.",
-    "photos": [
-
-    ]
+    "subtitle": "Located at the centre of Luganville, Vanuatu. We offer rooms to suit your basic holiday needs."
   },
   "reviewsSection": {
     "title": "Reviews",
     "reviews": [
       {
-        "photo": "",
         "name": "Daniel",
         "comment": "What a great place right in town! Close to everything. It was sparkling clean with everything you could need. The check in was easy and we will return here again if we are coming to town. Comfortable and stylish space . Communication great . Thanks again for sharing your space with us !"
       },
       {
-        "photo": "",
         "name": "Eliza",
         "comment": "Very clean & convenient place to stay. We loved having somewhere comfortable to restore after touring Tanna & the Millenium Caves."
       },
       {
-        "photo": "",
         "name": "Ashlee",
         "comment": "Beautiful appartment, location is fantastic, in the middle of the east coast, so it’s pretty easy to see sights ! On top of a supermarket which is super convenient, and close to restaurants with a stunning ocean view"
       }

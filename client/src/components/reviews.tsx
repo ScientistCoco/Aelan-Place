@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar } from 'antd';
+import CMS from "../../content/homepageCMS.json";
 import * as styles from "../components/reviews.module.scss";
 
 interface IReviews {
@@ -7,29 +8,38 @@ interface IReviews {
   show: boolean;
 }
 
+interface IReviewsCMS {
+  photo: string;
+  name: string;
+  comment: string;
+}
+
 export class Reviews extends React.Component<IReviews> {
   renderComments = () => {
-    const list = [1, 2, 3]
+    const { reviewsSection } = CMS;
 
     return (
-      list.map(i => (
-        <div className={styles.reviewsComment}>
-          <Avatar size={64} icon="user" />
-          <p className={styles.reviewsComment_description}>“Et quidem, impedit eum fugiat excepturi iste aliquid suscipit, tempore, delectus rem soluta voluptatem distinctio sed dolores, magni fugit nemo cum expedita. Totam a accusantium sunt aut autem placeat officia.”</p> 
-          <p className={styles.reviewsComment_user}>- User Smith</p>
+      reviewsSection.reviews.map((item: IReviewsCMS, index: number) => (
+        <div className={styles.reviewsComment} key={index}>
+          <Avatar size={64} >
+            {item.name.charAt(0).toUpperCase()}
+          </Avatar>
+          <p className={styles.reviewsComment_description}>“{item.comment}”</p> 
+          <p className={styles.reviewsComment_user}>- {item.name}</p>
         </div>
       ))
     )
   }
 
   render() {
-    const { htmlRef, show } = this.props;
+    const { htmlRef, show } = this.props;    
+    const { reviewsSection } = CMS;
 
     return (
       <div className={`${styles.reviewsContainer} ${show ? styles.reviewsContainer__show : styles.reviewsContainer__hide}`}
         ref={htmlRef}
       >        
-        <h1 className={styles.reviewsContainer_title}>Reviews</h1>
+        <h1 className={styles.reviewsContainer_title}>{reviewsSection.title}</h1>
         <div className={styles.reviewsComment_container}>
           {this.renderComments()}
         </div>

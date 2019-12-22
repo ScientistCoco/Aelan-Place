@@ -8,38 +8,4 @@
     flex-wrap: wrap;
     margin: 0;
   }
-
-  .attractionsImage {
-    width: 300px;
-    transition: opacity 0.3s ease-in-out;
-    position: relative;
-
-    &__show {
-      opacity: 1;
-      animation: slideIn 1s ease-in-out;
-    }
-    
-    &__hide {      
-      opacity: 0;
-      animation: slideOut 0.5s ease-in-out;
-    }
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(-50px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOut {
-  0% {
-    transform: translateX(0);  
-  }
-  100% {
-    transform: translateX(-50px);
-  }
 }

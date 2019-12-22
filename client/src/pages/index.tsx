@@ -5,7 +5,7 @@ import * as styles from "./index.module.scss";
 
 import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer } from "../components";
 import { post } from "../helpers";
-import CMS from "../../content/CMS.json";
+import CMS from "../../content/homepageCMS.json";
 
 class IndexPage extends React.Component<any, any> {  
   private attractionsRef: React.RefObject<HTMLDivElement>;

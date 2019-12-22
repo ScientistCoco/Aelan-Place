@@ -6,3 +6,4 @@ export * from "./photos";
 export * from "./reviews";
 export * from "./navbar";
 export * from "./layout";
+export * from "./attractionsImage";
