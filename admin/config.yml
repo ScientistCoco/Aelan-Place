@@ -6,45 +6,88 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  # - name: homepage
-  #   label: homepage
-  #   folder: static/admin/index
-  #   create: false
-  #   slug: "{{slug}}"
-  #   identifier_field: landingTitle
-  #   fields:
-  #     - { name: landingTitle, label: landingTitle, widget: string, default: Welcome to Aelan Place }
-  #     - { name: landingSubtitle, label: landingSubtitle, widget: string, default: Cosy tropical apartments }
-  #     - { name: exploreBtn, label: exploreBtn, widget: string, default: Explore the beauty }
-  #     - { name: contactBtn, label: contactBtn, widget: string, default: Contact us }
   - label: pages
     name: pages
     files:
+      - label: Footer
+        name: Footer
+        file: client/content/footerCMS.json
+        fields: 
+          - { name: email, label: email, widget: string }
+          - { name: facebook, label: facebook, widget: string }
+          - { name: airbnb, label: airbnb, widget: string }
       - label: Homepage
         name: Homepage
-        file: client/content/CMS.json
+        file: client/content/homepageCMS.json
         fields: 
           - { name: landingTitle, label: landingTitle, widget: string }
           - { name: landingSubtitle, label: landingSubtitle, widget: string }
           - { name: exploreBtn, label: exploreBtn, widget: string }
           - { name: contactBtn, label: contactBtn, widget: string }
-          # - { name: visitTitle, label: visitTitle, widget: string, default: You can visit }
-          # - name: visitLocations
-          #   label: visitLocations
-          #   widget: object
-          #   fields: 
-          #     - {
-          #         label: locationName,
-          #         name: locationName,
-          #         widget: string
-          #       }
-          #     - { 
-          #         label: locationLink,
-          #         name: locationLink,
-          #         widget: string
-          #       }
-          #     - {
-          #         label: locationImage,
-          #         name: locationImage,
-          #         widget: image
-          #       }
+          - name: visitSection
+            label: visitSection
+            widget: object
+            fields: 
+              - {
+                  name: title,
+                  label: title,
+                  widget: string
+                }
+              - name: places
+                label: places
+                widget: list
+                allow_add: false
+                fields:
+                  - {
+                      label: locationName,
+                      name: locationName,
+                      widget: string
+                    }                  
+                  - {
+                      label: link,
+                      name: link,
+                      widget: string
+                    }
+                  - {
+                      label: photo,
+                      name: photo,
+                      widget: string
+                    }
+          - name: photosSection
+            label: photosSection
+            widget: object
+            fields: 
+              - {
+                  name: title,
+                  label: title,
+                  widget: string
+                }
+              - {
+                  name: subtitle,
+                  label: subtitle,
+                  widget: string
+                }
+          - name: reviewsSection
+            label: reviewsSection
+            widget: object
+            fields: 
+              - {
+                  name: title,
+                  label: title,
+                  widget: string
+                }
+              - name: reviews
+                label: reviews
+                widget: list
+                allow_add: false
+                fields: 
+                - {
+                    name: name,
+                    label: name,
+                    widget: string                    
+                  } 
+                - {
+                    name: comment,
+                    label: comment,
+                    widget: string                    
+                  }                   
