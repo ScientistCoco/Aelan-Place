@@ -1,0 +1,58 @@
+{
+  "landingTitle": "Welcome to Aelan place",
+  "landingSubtitle": "Cosy tropical apartments",
+  "exploreBtn": "Explore the beauty",
+  "contactBtn": "Contact us",
+  "visitSection": {
+    "title": "YOU CAN VISIT",
+    "places": [
+      {
+        "locationName": "Million Dollar Point",
+        "photo": "//live.staticflickr.com/718/31848201832_51a7ab8bc9_n.jpg",
+        "link": "https://www.santo.travel/million-dollar-point"
+      },
+      {
+        "locationName": "Millennium Cave",
+        "photo": "https://nui.nz/wp-content/uploads/2018/04/P1000323.jpg",
+        "link": "https://www.santo.travel/millenium-cave"
+      },
+      {
+        "locationName": "Champagne Beach",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5LeDl1VWsYvaqnql7Nf5dZSTZNAWNaLPrvrRUBxPsQpNsqtSk",
+        "link": "https://www.santo.travel/champagne-beach"
+      },
+      {
+        "locationName": "Matevulu Blue Hole",
+        "photo": "https://live.staticflickr.com/8370/8588698034_8cdc392e12_c.jpg",
+        "link": "https://www.vanuatu.travel/en/play/see-and-do/blue-holes/matevulu-blue-hole"
+      }
+    ]
+  },
+  "photosSection": {
+    "title": "A gorgeous place to enjoy your holiday",
+    "subtitle": "Located at the centre of Luganville, Vanuatu. We offer rooms to suit your basic holiday needs.",
+    "photos": [
+
+    ]
+  },
+  "reviewsSection": {
+    "title": "Reviews",
+    "reviews": [
+      {
+        "photo": "",
+        "name": "Daniel",
+        "comment": "What a great place right in town! Close to everything. It was sparkling clean with everything you could need. The check in was easy and we will return here again if we are coming to town. Comfortable and stylish space . Communication great . Thanks again for sharing your space with us !"
+      },
+      {
+        "photo": "",
+        "name": "Eliza",
+        "comment": "Very clean & convenient place to stay. We loved having somewhere comfortable to restore after touring Tanna & the Millenium Caves."
+      },
+      {
+        "photo": "",
+        "name": "Ashlee",
+        "comment": "Beautiful appartment, location is fantastic, in the middle of the east coast, so it’s pretty easy to see sights ! On top of a supermarket which is super convenient, and close to restaurants with a stunning ocean view"
+      }
+    ]
+  }
+}
