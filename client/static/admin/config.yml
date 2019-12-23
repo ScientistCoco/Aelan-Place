@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - label: pages
     name: pages
-    files:
+    files:      
       - label: Footer
         name: Footer
         file: client/content/footerCMS.json
@@ -16,6 +16,62 @@ collections:
           - { name: email, label: email, widget: string }
           - { name: facebook, label: facebook, widget: string }
           - { name: airbnb, label: airbnb, widget: string }
+      - label: Apartment Page
+        name: Apartment Page
+        file: client/content/apartmentsCMS.json
+        fields:
+          - { name: title, label: title, widget: string }
+          - { name: subtitle, label: subtitle, widget: string }
+          - name: apartments
+            label: apartments
+            widget: list
+            allow_add: false
+            fields: 
+              - {
+                  name: name,
+                  label: name,
+                  widget: string
+                }
+              - {
+                  name: description,
+                  label: description,
+                  widget: string
+                }
+              - {
+                  name: image,
+                  label: image,
+                  widget: string
+                }
+              - {
+                  name: button,
+                  label: button,
+                  widget: string
+                }
+              - {
+                  name: link,
+                  label: link,
+                  widget: string
+                }
+              - {
+                  name: guests,
+                  label: guests,
+                  widget: string
+                }
+              - {
+                  name: bedrooms,
+                  label: bedrooms,
+                  widget: string
+                }
+              - {
+                  name: beds,
+                  label: beds,
+                  widget: string
+                }           
+              - {
+                  name: bath,
+                  label: bath,
+                  widget: string
+                }     
       - label: Homepage
         name: Homepage
         file: client/content/homepageCMS.json
