@@ -1,21 +1,22 @@
 import React from "react";
-import { Button } from 'antd';
+import { Button, Icon } from 'antd';
+import { Bathtub, Bed, Key, Suitcase } from "../../assets";
+import CMS from "../../content/apartmentsCMS.json";
 import * as styles from "./apartments.module.scss";
 
 import { Footer, Image, Layout, Navbar, Modal } from "../components";
 
-const LoremIpsumText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid, est reiciendis repellat sapiente consequatur aperiam, ducimus, id minima eligendi officiis, qui expedita sint culpa illum magnam ipsam adipisci possimus? Sit aspernatur eaque id sunt fuga facere hic laudantium, aperiam! Provident dolor aperiam similique maiores quasi. Quo repudiandae fuga commodi itaque dolores accusamus, dolor esse adipisci labore harum blanditiis in totam ipsum vero necessitatibus incidunt reprehenderit, id iste quas, ab, non! Voluptates, reiciendis culpa iure deserunt voluptatum itaque. Quos, soluta.";
-
-const apartments = [
-  {
-    filename: "aelan_1.jpg",
-    name: "Aelan Place #5"
-  },
-  {
-    filename: "aelan_2.jpg",
-    name: "Aelan Place #6"
-  }
-];
+interface IApartmentItemCMS {
+  name: string,
+  description: string,
+  image: string,
+  button: string,
+  link: string,
+  guests: string,
+  bedrooms: string,
+  beds: string,
+  bath: string
+}
 
 class Apartments extends React.Component<any, any> {
   private apartmentRefs: Array<React.RefObject<HTMLDivElement>>;
@@ -24,9 +25,9 @@ class Apartments extends React.Component<any, any> {
     super(props);
     this.state = {
       menuToggled: false,
-      showApartment: new Array(apartments.length).fill(true)
+      showApartment: new Array(CMS.apartments.length).fill(true)
     }
-    this.apartmentRefs = Array.from({length: apartments.length}, () => React.createRef())
+    this.apartmentRefs = Array.from({length: CMS.apartments.length}, () => React.createRef())
   }
 
   toggleMenu = () => {
@@ -37,18 +38,40 @@ class Apartments extends React.Component<any, any> {
     })
   }
 
-  renderApartmentImage = (filename: string, show: boolean) => (
+  renderApartmentImage = (image: string, show: boolean) => (
     <div className={`${styles.apartmentsRoom_container_item} ${show ? styles.apartmentsRoom_container_item_image__show : styles.apartmentsRoom_container_item_image__hide}`}>
-      <Image filename={filename} style={{ height: '60vh' }}/>
+      <Image filename={image} style={{ height: '60vh' }}/>
     </div>    
   )
 
-  renderApartmentTitle = (name: string, show: boolean) => (
+  renderApartmentTitle = (show: boolean, apartment: IApartmentItemCMS) => (
     <div className={`${styles.apartmentsRoom_container_item} ${show ? styles.apartmentsRoom_container_item_title__show : styles.apartmentsRoom_container_item_title__hide}`}>
       <div className={styles.apartmentsRoom_content}>
-        <h1 className={styles.apartmentsRoom_content_header}>{name}</h1>
-        <p>{LoremIpsumText}</p>
-        <Button type="primary" shape="round" size="large">Learn more</Button>
+        <h1 className={styles.apartmentsRoom_content_header}>{apartment.name}</h1>
+        <div className={styles.apartmentsRoom_content_features}>
+          <span className={styles.apartmentsRoom_content_features_item}>
+            <Icon component={Suitcase} style={{ fontSize: '1.5rem', color: 'rgb(24, 144, 255)'}}/>
+            <p className={styles.apartmentsRoom_content_features_item_text}>{apartment.guests} guests</p>
+          </span>
+          <span className={styles.apartmentsRoom_content_features_item}>
+            <Icon component={Key} style={{ fontSize: '1.5rem', color: 'rgb(24, 144, 255)'}}/>
+            <p className={styles.apartmentsRoom_content_features_item_text}>{apartment.bedrooms} bedrooms</p>
+          </span>
+          <span className={styles.apartmentsRoom_content_features_item}>
+            <Icon component={Bed} style={{ fontSize: '1.5rem', color: 'rgb(24, 144, 255)'}}/>
+            <p className={styles.apartmentsRoom_content_features_item_text}>{apartment.beds} beds</p>
+          </span>
+          <span className={styles.apartmentsRoom_content_features_item}>
+            <Icon component={Bathtub} style={{ fontSize: '1.5rem', color: 'rgb(24, 144, 255)', fontWeight: 'bold' }}/>
+            <p className={styles.apartmentsRoom_content_features_item_text}>{apartment.bath} bathroom</p>
+          </span>
+        </div>
+        <p>{apartment.description}</p>
+        <Button type="primary" shape="round" size="large">
+          <a href={apartment.link} target="__blank">
+            {apartment.button}
+          </a>
+        </Button>
       </div>
     </div>
   )
@@ -57,17 +80,17 @@ class Apartments extends React.Component<any, any> {
     const { showApartment } = this.state;
 
     return (
-      apartments.map((apartment: any, index: number) => (      
+      CMS.apartments.map((apartment: any, index: number) => (      
         <div className={styles.apartmentsRoom_container} ref={this.apartmentRefs[index]}>              
           {index % 2 === 0 ? 
           <>
-            {this.renderApartmentTitle(apartment.name, showApartment[index])}
-            {this.renderApartmentImage(apartment.filename, showApartment[index])}
+            {this.renderApartmentTitle(showApartment[index], apartment)}
+            {this.renderApartmentImage(apartment.image, showApartment[index])}
           </>
           : 
           <>
-            {this.renderApartmentImage(apartment.filename, showApartment[index])}
-            {this.renderApartmentTitle(apartment.name, showApartment[index])}
+            {this.renderApartmentImage(apartment.image, showApartment[index])}
+            {this.renderApartmentTitle(showApartment[index], apartment)}
           </>        
           }
         </div>      
@@ -113,8 +136,8 @@ class Apartments extends React.Component<any, any> {
           <div className={styles.apartmentsIntro_container}>
             <Image filename="aelan_3.jpg" imgStyle={{ filter: 'brightness(0.5)' }} style={{ height: '50vh' }}/>
             <div className={styles.apartmentsIntro_text}>
-              <h1 className={styles.apartmentsIntro_header}>Apartments</h1>
-              <p className={styles.apartmentsIntro_subtitle}>Enjoy your stay</p>
+              <h1 className={styles.apartmentsIntro_header}>{CMS.title}</h1>
+              <p className={styles.apartmentsIntro_subtitle}>{CMS.subtitle}</p>
             </div>
           </div>
           {this.renderApartments()}

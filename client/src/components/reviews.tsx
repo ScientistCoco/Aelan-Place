@@ -9,7 +9,6 @@ interface IReviews {
 }
 
 interface IReviewsCMS {
-  photo: string;
   name: string;
   comment: string;
 }

@@ -1,0 +1,50 @@
+{
+  "title": "Apartments",
+  "subtitle": "Enjoy your stay",  
+  "apartments": [
+    {
+      "name": "Aelan Place #03",
+      "description": "Cosy space perfect for couple or small family on main strip of town. Features open plan living space and fully equipped kitchen so you'll feel right at home! This apartment is situated near the back of the building so will experience minimal to no street noise.",
+      "image": "aelan_5.jpg",
+      "button": "Learn more",
+      "link": "https://www.airbnb.com.au/rooms/39097100",
+      "guests": "3",
+      "bedrooms": "2",
+      "beds": "2",
+      "bath": "1"
+    },
+    {
+      "name": "Aelan Place #04",
+      "description": "Cosy space perfect for couple or small family on main strip of town. Features open plan living space and fully equipped kitchen so you'll feel right at home! This apartment is situated near the back of the building so will experience minimal to no street noise.",
+      "image": "aelan_7.jpg",
+      "button": "Learn more",
+      "link": "https://www.airbnb.com.au/rooms/37898170",
+      "guests": "3",
+      "bedrooms": "2",
+      "beds": "2",
+      "bath": "1"
+    },
+    {
+      "name": "Aelan Place #05",
+      "description": "This spacious, light filled apartment is the perfect place to call home while exploring Santo. It features an open plan kitchen and living area with 180 degree views of Aore Island as well Santo town from the balcony (Sunset view is a bonus!).",
+      "image": "aelan_1.jpg",
+      "button": "Learn more",
+      "link": "https://www.airbnb.com.au/rooms/36001655",
+      "guests": "4",
+      "bedrooms": "2",
+      "beds": "3",
+      "bath": "1"
+    },
+    {
+      "name": "Aelan Place #06",
+      "description": "This spacious, light filled apartment is the perfect place to call home while exploring Santo. It features an open plan kitchen and living area with 180 degree views of Aore Island as well Santo town from the balcony (Sunset view is a bonus!).",
+      "image": "aelan_2.jpg",
+      "button": "Learn more",
+      "link": "https://www.airbnb.com.au/rooms/36748125",
+      "guests": "4",
+      "bedrooms": "2",
+      "beds": "3",
+      "bath": "1"
+    }
+  ]
+}
