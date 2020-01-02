@@ -22,7 +22,6 @@ class About extends React.Component<any, any> {
   }
 
   render() {
-    const sanitizer = dompurify.sanitize;
     const { menuToggled } = this.state
     
     return (
@@ -49,7 +48,7 @@ class About extends React.Component<any, any> {
             </div>
             <div className={styles.aboutContent_item}>
               <h2 className={styles.aboutContent_header}>{CMS.sectionTitle}</h2>
-              <p dangerouslySetInnerHTML={{ __html: sanitizer(CMS.sectionDescription) }}/>
+              <p dangerouslySetInnerHTML={{ __html: dompurify.sanitize(CMS.sectionDescription) }}/>
             </div>
           </div>
           <Footer />
