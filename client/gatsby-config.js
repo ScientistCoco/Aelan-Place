@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Aelan Place`,
     description: `Tropical apartments`,    
+    author: `scientistcoco`
   },
   plugins: [
     `gatsby-plugin-typescript`,
