@@ -16,6 +16,14 @@ collections:
           - { name: email, label: email, widget: string }
           - { name: facebook, label: facebook, widget: string }
           - { name: airbnb, label: airbnb, widget: string }
+      - label: About
+        name: About
+        file: client/content/aboutCMS.json
+        fields: 
+          - { name: title, label: title, widget: string }
+          - { name: sectionTitle, label: sectionTitle, widget: string }
+          - { name: sectionDescription, label: sectionDescription, widget: string }
+          - { name: videoLink, label: videoLink, widget: string }
       - label: Apartment Page
         name: Apartment Page
         file: client/content/apartmentsCMS.json
