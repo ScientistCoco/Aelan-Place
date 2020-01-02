@@ -1,3 +1,6 @@
+/** Sending emails: https://stackabuse.com/how-to-send-emails-with-node-js/ */
+/** Mail host: https://mailtrap.io/inboxes/790027/messages/1526923931 */
+
 import { Response, Request } from 'express';
 import nodemailer from 'nodemailer';
 
