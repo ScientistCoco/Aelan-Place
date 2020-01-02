@@ -7,3 +7,4 @@ export * from "./reviews";
 export * from "./navbar";
 export * from "./layout";
 export * from "./attractionsImage";
+export { default as SEO } from "./seo";
