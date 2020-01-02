@@ -95,7 +95,7 @@ class IndexPage extends React.Component<any, any> {
           {!menuToggled &&
             <>
               <div className={styles.introContainer}>          
-                <Image filename="palm-trees1.png" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
+                <Image filename="aelan_8.jpg" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
                 <div className={styles.introContainer_main}>
                   <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>
                   <p className={styles.introContainer_subtitle}>{CMS.landingSubtitle}</p>

@@ -29,12 +29,20 @@ export class Footer extends React.Component<any> {
         <div className={styles.footerContainer_section}>
           <div className={styles.footerContainer_section_item}>
             <p>
-              <Link to="/apartments/" className={styles.footerContainer_section_item_link}>
-                Rooms
+              <Link to="/about/" className={styles.footerContainer_section_item_link}>
+                About
               </Link>
             </p>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
+            <p>
+              <Link to="/apartments/" className={styles.footerContainer_section_item_link}>
+                Apartments
+              </Link>
+            </p>
+            <p>
+              <Link to="/contact/" className={styles.footerContainer_section_item_link}>
+                Contact Us
+              </Link>
+            </p>
           </div>
           <div className={styles.footerContainer_section_item}>
             {this.renderContactsInfo("Email", email)}
