@@ -105,6 +105,7 @@ class IndexPage extends React.Component<any, any> {
                     {/* <Button type="primary" shape="round" size="large" onClick={this.fetchAvailabilities}>Test</Button> */}
                   </div>
                 </div>
+                <p className={styles.introContainer_scroll}><span className={styles.introContainer_scroll_arrow}/>Scroll</p>
               </div>
               <Attractions show={showAttractions} htmlRef={this.attractionsRef}/>
               <Photos show={showPhotos} htmlRef={this.photosRef}/>

@@ -1,4 +1,5 @@
 import React from "react";
+import dompurify from "dompurify";
 import * as styles from "./about.module.scss";
 
 import { Footer, Image, Layout, Navbar, Modal } from "../components";
@@ -21,8 +22,9 @@ class About extends React.Component<any, any> {
   }
 
   render() {
+    const sanitizer = dompurify.sanitize;
     const { menuToggled } = this.state
-
+    
     return (
       <Layout className={styles.about}>
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
@@ -47,7 +49,7 @@ class About extends React.Component<any, any> {
             </div>
             <div className={styles.aboutContent_item}>
               <h2 className={styles.aboutContent_header}>{CMS.sectionTitle}</h2>
-              <p>{CMS.sectionDescription}</p>
+              <p dangerouslySetInnerHTML={{ __html: sanitizer(CMS.sectionDescription) }}/>
             </div>
           </div>
           <Footer />

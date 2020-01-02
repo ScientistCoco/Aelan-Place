@@ -8,6 +8,7 @@ import {
   AntDatePicker,
 } from "../components/createAntFields";
 import { Footer, Image, Layout, Navbar, Modal } from "../components";
+import CMS from "../../content/contactUsCMS.json";
 import * as styles from "./contact.module.scss";
 import * as Yup from "yup";
 
@@ -46,8 +47,8 @@ class Contact extends React.Component<any, any> {
           <div className={styles.contactIntro_container}>
             <Image filename="aelan_4.jpg" imgStyle={{ filter: 'brightness(0.5)' }} style={{ height: '50vh' }}/>
             <div className={styles.contactIntro_text}>
-              <h1 className={styles.contactIntro_header}>Contact Us</h1>
-              <p className={styles.contactIntro_subtitle}>Fill in the fields below and we'll get back to you.</p>
+              <h1 className={styles.contactIntro_header}>{CMS.title}</h1>
+              <p className={styles.contactIntro_subtitle}>{CMS.subtitle}</p>
             </div>
           </div>
           <div className={styles.contactForm_container}>
@@ -126,9 +127,9 @@ class Contact extends React.Component<any, any> {
             </Formik>
             <div className={styles.contactForm_details}>
               <p className={styles.contactForm_details_label}>ADDRESS</p>
-              <p className={styles.contactForm_details_text}>98 West 21th Street, Suite 217 Place A</p>
+              <p className={styles.contactForm_details_text}>{CMS.address}</p>
               <p className={styles.contactForm_details_label}>EMAIL</p>
-              <p className={styles.contactForm_details_text}>info@yourdomain.com</p>
+              <p className={styles.contactForm_details_text}>{CMS.email}</p>
             </div>
           </div>
           <Footer />

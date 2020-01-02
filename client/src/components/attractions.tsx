@@ -20,7 +20,7 @@ export class Attractions extends React.Component<IAttractions> {
     const { visitSection } = CMS;
 
     return (
-      <div className={styles.attractionsContainer} ref={this.props.htmlRef}>
+      <div className={styles.attractionsContainer} ref={this.props.htmlRef} id="attractions">
         <p style={{ fontFamily: 'Mukta Mahee, arial, sans-serif', fontWeight: 'bold', color: 'slategray', paddingBottom: '20px' }}>{visitSection.title}</p>
         <div>
           <ol className={styles.attractionsContainer_list}>

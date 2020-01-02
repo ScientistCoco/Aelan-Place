@@ -51,7 +51,7 @@ export class Footer extends React.Component<any> {
         </div>
         <hr className={styles.footerContainer_horizontalline}/>
         <div className={styles.footerContainer_footer}>
-          <p>Copyright ©2019 All rights reserved</p>
+          <p>Copyright ©2020 All rights reserved</p>
           {/* <div className={styles.footerContainer_footer_links}>
             <Icon type="facebook" />
             <Icon type="ant-design" />
