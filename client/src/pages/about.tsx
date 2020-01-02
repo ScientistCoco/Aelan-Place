@@ -1,5 +1,5 @@
 import React from "react";
-import dompurify from "dompurify";
+import sanitizeHTML from "sanitize-html";
 import * as styles from "./about.module.scss";
 
 import { Footer, Image, Layout, Navbar, Modal } from "../components";
@@ -48,7 +48,7 @@ class About extends React.Component<any, any> {
             </div>
             <div className={styles.aboutContent_item}>
               <h2 className={styles.aboutContent_header}>{CMS.sectionTitle}</h2>
-              <p dangerouslySetInnerHTML={{ __html: dompurify.sanitize(CMS.sectionDescription) }}/>
+              <p dangerouslySetInnerHTML={{ __html: sanitizeHTML(CMS.sectionDescription) }}/>
             </div>
           </div>
           <Footer />

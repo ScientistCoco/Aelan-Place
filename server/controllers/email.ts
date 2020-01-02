@@ -10,7 +10,7 @@ const transport = nodemailer.createTransport({
   }
 });
 
-export const sendMail = async (req: Request, res: Response) => {
+export const sendMail = (req: Request, res: Response) => {
   const { message } = req.body;
 
   const emailContents = {
