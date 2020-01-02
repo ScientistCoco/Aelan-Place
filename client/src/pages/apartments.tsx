@@ -4,7 +4,7 @@ import { Bathtub, Bed, Key, Suitcase } from "../../assets";
 import CMS from "../../content/apartmentsCMS.json";
 import * as styles from "./apartments.module.scss";
 
-import { Footer, Image, Layout, Navbar, Modal } from "../components";
+import { Footer, Image, Layout, Navbar, Modal, SEO } from "../components";
 
 interface IApartmentItemCMS {
   name: string,
@@ -129,6 +129,7 @@ class Apartments extends React.Component<any, any> {
 
     return (  
       <Layout className={styles.apartments}>
+        <SEO title="Apartments" />
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
         <Modal showModal={menuToggled} />      
         {!menuToggled && 

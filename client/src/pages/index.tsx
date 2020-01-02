@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { Link } from "gatsby"
 import * as styles from "./index.module.scss";
 
-import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer } from "../components";
+import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer, SEO } from "../components";
 import { post } from "../helpers";
 import CMS from "../../content/homepageCMS.json";
 
@@ -90,6 +90,7 @@ class IndexPage extends React.Component<any, any> {
 
     return (
       <Layout>
+          <SEO title="Overview" />
           <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>      
           <Modal showModal={menuToggled} />
           {!menuToggled &&

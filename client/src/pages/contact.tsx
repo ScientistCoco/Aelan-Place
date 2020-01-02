@@ -7,7 +7,7 @@ import {
   AntSelect,
   AntDatePicker,
 } from "../components/createAntFields";
-import { Footer, Image, Layout, Navbar, Modal } from "../components";
+import { Footer, Image, Layout, Navbar, Modal, SEO } from "../components";
 import CMS from "../../content/contactUsCMS.json";
 import * as styles from "./contact.module.scss";
 import * as Yup from "yup";
@@ -40,6 +40,7 @@ class Contact extends React.Component<any, any> {
     
     return (
       <Layout className={styles.contact}>
+        <SEO title="Contact" />
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
         <Modal showModal={menuToggled} />
         {!menuToggled && 

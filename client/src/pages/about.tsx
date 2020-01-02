@@ -2,7 +2,7 @@ import React from "react";
 import sanitizeHTML from "sanitize-html";
 import * as styles from "./about.module.scss";
 
-import { Footer, Image, Layout, Navbar, Modal } from "../components";
+import { Footer, Image, Layout, Navbar, Modal, SEO } from "../components";
 import CMS from "../../content/aboutCMS.json";
 
 class About extends React.Component<any, any> {
@@ -26,6 +26,7 @@ class About extends React.Component<any, any> {
     
     return (
       <Layout className={styles.about}>
+        <SEO title="About" />
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
         <Modal showModal={menuToggled} />      
         {!menuToggled && 
