@@ -4,6 +4,7 @@ import { DatePicker, Form, Input, TimePicker, Select } from "antd";
 const FormItem = Form.Item;
 const { TextArea } = Input;
 const { Option } = Select;
+const { RangePicker } = DatePicker;
 
 const CreateAntField = (AntComponent: any) => ({
   field,
@@ -56,6 +57,7 @@ const CreateAntField = (AntComponent: any) => ({
 
 export const AntSelect = CreateAntField(Select);
 export const AntDatePicker = CreateAntField(DatePicker);
+export const AntRangePicker = CreateAntField(RangePicker);
 export const AntInput = CreateAntField(Input);
 export const AntTimePicker = CreateAntField(TimePicker);
 export const AntTextArea = CreateAntField(TextArea);

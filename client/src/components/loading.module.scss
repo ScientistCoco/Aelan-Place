@@ -1,0 +1,27 @@
+.loadingContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  visibility: hidden;
+
+  &__show { 
+    pointer-events: auto;
+    visibility: visible;
+    z-index: 99;
+  }
+
+  &__hide {
+    pointer-events: none;
+  }
+
+  &_spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -7,7 +7,9 @@
   "dependencies": {
     "@types/react-helmet": "^5.0.9",
     "@types/sanitize-html": "^1.20.2",
+    "@types/yup": "^0.26.27",
     "antd": "^3.22.2",
+    "date-fns": "^2.8.1",
     "formik": "^1.5.8",
     "gatsby": "^2.13.73",
     "gatsby-image": "^2.2.10",

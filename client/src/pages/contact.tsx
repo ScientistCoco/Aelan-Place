@@ -1,23 +1,44 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
-import { Button } from "antd";
+import { Button, message } from "antd";
+import { format, isFuture } from 'date-fns';
 import {
   AntTextArea,
   AntInput,
   AntSelect,
-  AntDatePicker,
+  AntRangePicker,
 } from "../components/createAntFields";
-import { Footer, Image, Layout, Navbar, Modal, SEO } from "../components";
+import { Footer, Image, Layout, Navbar, Modal, SEO, Loading } from "../components";
+import { post } from "../helpers";
 import CMS from "../../content/contactUsCMS.json";
 import * as styles from "./contact.module.scss";
 import * as Yup from "yup";
+
+interface IContactFormValues {
+  email_field: string;
+  name_field: string;
+  enquiry_type_field: string;
+  enquiry_date_field?: Array<any>;
+  message_field: string;
+}
+
+enum ENQUIRY_TYPES {
+  GENERAL_ENQUIRY = "General enquiry",
+  BOOKING_ENQUIRY = "Booking enquiry"
+}
+
+message.config({
+  top: 50,
+  maxCount: 2
+});
 
 class Contact extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
       menuToggled: false,
-      showBookingDates: false
+      showBookingDates: false,
+      loading: false,
     }
   }
 
@@ -34,12 +55,59 @@ class Contact extends React.Component<any, any> {
       showBookingDates: value === "Booking enquiry"
     })
   }
+  
+  handleSubmit = async (values: IContactFormValues, resetForm: any) => {    
+    message.destroy();
+    
+    this.setState({ loading: true });
+
+    const enquiryDates = values.enquiry_date_field && values.enquiry_date_field.length ? 
+      `<b>Start date:</b> ${format(values.enquiry_date_field[0].toDate(), "dd-MM-yyyy")}
+        <br/>
+        <b>End date: </b> ${format(values.enquiry_date_field[1].toDate(), "dd-MM-yyyy")}
+        <br/>
+        <br/>
+      `
+      :
+      "";
+    
+    const messageTemplate = `
+      <b>Name: </b><p>${values.name_field}</p>
+      <br/>
+      <b>Email: </b><p>${values.email_field}</p>
+      <br/>
+      <b>Enquiry Type: </b><p>${values.enquiry_type_field}</p>
+      <br/>
+      ${enquiryDates}    
+      <b>Message: </b><p>${values.message_field}</p>
+    `
+
+    const sendEmailRes = await post("/api/email", { message: messageTemplate }, {});
+
+    this.setState({ loading: false });
+
+    if (sendEmailRes.status === 200) {
+      this.handleSuccessfulSend(resetForm);
+    } else {
+      this.handleFailedSend();
+    }
+  }
+
+  handleSuccessfulSend = (resetForm: any) => {
+    message.success('Succesfully sent', 10);
+    resetForm();
+  }
+
+  handleFailedSend = () => {
+    message.error('Failed to send', 10);
+  }
 
   render() {
-    const { menuToggled, showBookingDates } = this.state; 
+    const { loading, menuToggled, showBookingDates } = this.state; 
     
     return (
       <Layout className={styles.contact}>
+        <Loading loading={loading} message="Sending..." />
         <SEO title="Contact" />
         <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>
         <Modal showModal={menuToggled} />
@@ -54,7 +122,13 @@ class Contact extends React.Component<any, any> {
           </div>
           <div className={styles.contactForm_container}>
             <Formik
-              initialValues={{ email: '', text: '' }}
+              initialValues={{ 
+                email_field: '',
+                name_field: '',
+                enquiry_type_field: '',
+                enquiry_date_field: [],
+                message_field: '',
+              }}
               validationSchema={Yup.object().shape({
                 email_field: Yup.string()
                   .email("Please enter a valid email")
@@ -63,10 +137,21 @@ class Contact extends React.Component<any, any> {
                   .required("Name is required"),
                 enquiry_type_field: Yup.string()
                   .required("Please state the purpose of your enquiry"),
-                enquiry_date_field: Yup.mixed("Date required")
-                  .required("Date required")
+                enquiry_date_field: Yup.mixed().when('enquiry_type_field', {
+                  is: ENQUIRY_TYPES.BOOKING_ENQUIRY,
+                  then: Yup.mixed()
+                    .required("Date required")
+                    .test("Is-present-date", 
+                      "Enquiry dates cannot be in the past",
+                      (value: any) => isFuture(value[0].toDate())
+                    )
+                }),
+                message_field: Yup.string()
+                  .required("Message is required")
               })}
-              onSubmit={( values ) => {
+              onSubmit={( values: IContactFormValues, { resetForm } ) => {
+                message.destroy();
+                this.handleSubmit(values, resetForm)
               }}
             >
               <Form className={styles.contactForm_form}>
@@ -96,7 +181,7 @@ class Contact extends React.Component<any, any> {
                     size="large" 
                     name="enquiry_type_field" 
                     component={AntSelect} 
-                    selectOptions={["General enquiry", "Booking enquiry"]}
+                    selectOptions={[ENQUIRY_TYPES.GENERAL_ENQUIRY, ENQUIRY_TYPES.BOOKING_ENQUIRY]}
                     onChange={this.handleEnquiryChange}
                     hasFeedback
                   />
@@ -107,7 +192,7 @@ class Contact extends React.Component<any, any> {
                   <Field id="enquiry_date_field" 
                     size="large" 
                     name="enquiry_date_field" 
-                    component={AntDatePicker} 
+                    component={AntRangePicker} 
                     format="DD-MM-YYYY"
                     hasFeedback
                   />
@@ -123,8 +208,8 @@ class Contact extends React.Component<any, any> {
                     autosize={{ minRows: 4, maxRows: 6 }}         
                   />
                 </div>
-                <Button type="primary" shape="round">Send message</Button>
-              </Form>
+                <Button type="primary" shape="round" htmlType="submit">Send message</Button>
+              </Form>                             
             </Formik>
             <div className={styles.contactForm_details}>
               <p className={styles.contactForm_details_label}>ADDRESS</p>

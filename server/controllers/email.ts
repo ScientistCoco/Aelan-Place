@@ -20,7 +20,7 @@ export const sendMail = (req: Request, res: Response) => {
     from: 'info@aelanplace.com',
     to: 'courtney.lum@gmail.com',
     subject: 'Aelan Place - Inquiry',
-    text: `${message}`
+    html: `${message}`
   };
 
   transport.sendMail(emailContents, (err: Error) => {
