@@ -94,12 +94,16 @@ class Contact extends React.Component<any, any> {
   }
 
   handleSuccessfulSend = (resetForm: any) => {
-    message.success('Succesfully sent', 10);
+    message.success('Succesfully sent', 0);
     resetForm();
   }
 
   handleFailedSend = () => {
-    message.error('Failed to send', 10);
+    message.error('Failed to send', 0);
+  }
+
+  componentWillUnmount() {
+    message.destroy();
   }
 
   render() {
