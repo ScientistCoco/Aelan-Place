@@ -3,7 +3,7 @@ import { Availability, Email, HealthCheck } from './routes';
 import bodyParser from 'body-parser';
 import express from 'express';
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyParser.json());
