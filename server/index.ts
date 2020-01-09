@@ -6,6 +6,10 @@ import express from 'express';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 app.use(bodyParser.json());
 
 /** Routes: */

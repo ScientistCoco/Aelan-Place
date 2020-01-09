@@ -4,12 +4,15 @@
 import { Response, Request } from 'express';
 import nodemailer from 'nodemailer';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const transport = nodemailer.createTransport({
-  host: 'smtp.mailtrap.io',
-  port: 2525,
+  service: 'gmail',
   auth: {
-    user: '0bbec1079d833b',
-    pass: '740e00eead2b7d'
+    user: process.env.GMAIL_USERNAME,
+    pass: process.env.GMAIL_PASSWORD
   }
 });
 
@@ -17,8 +20,7 @@ export const sendMail = (req: Request, res: Response) => {
   const { message } = req.body;
 
   const emailContents = {
-    from: 'info@aelanplace.com',
-    to: 'courtney.lum@gmail.com',
+    to: process.env.GMAIL_USERNAME,
     subject: 'Aelan Place - Inquiry',
     html: `${message}`
   };
@@ -26,7 +28,10 @@ export const sendMail = (req: Request, res: Response) => {
   transport.sendMail(emailContents, (err: Error) => {
     if (err) {
       return res.status(500).json({
-        error: 'Failed to send.'
+        error: 'Failed to send.',
+        message: err.message,
+        username: process.env.OUTLOOK_USERNAME,
+        password: process.env.OUTLOOK_PASSWORD
       })      
     } 
     return res.json({ message: 'success' });
