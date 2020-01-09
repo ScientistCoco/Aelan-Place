@@ -28,10 +28,7 @@ export const sendMail = (req: Request, res: Response) => {
   transport.sendMail(emailContents, (err: Error) => {
     if (err) {
       return res.status(500).json({
-        error: 'Failed to send.',
-        message: err.message,
-        username: process.env.OUTLOOK_USERNAME,
-        password: process.env.OUTLOOK_PASSWORD
+        error: 'Failed to send.'      
       })      
     } 
     return res.json({ message: 'success' });
