@@ -11,7 +11,10 @@ interface INavbar {
 
 export const Navbar = (props: INavbar) => (
   <div className={styles.navbar}>
-    <Link to="/"><Icon component={AelanPlaceLogo} className={styles.navbar_icon}/></Link>
+    <Link to="/">
+      <Icon component={AelanPlaceLogo} className={`${styles.navbar_icon} 
+        ${props.menuToggled ? styles.navbar_icon__black : styles.navbar_icon__white}`}/>
+    </Link>
     <div className={
       `${styles.navbar_icon} ${styles.menu_icon} 
         ${props.menuToggled ? styles.menu_icon__open : styles.menu_icon__closed}`

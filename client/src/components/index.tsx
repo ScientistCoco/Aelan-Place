@@ -9,3 +9,4 @@ export * from "./layout";
 export * from "./attractionsImage";
 export { default as SEO } from "./seo";
 export * from "./loading";
+export * from "./carousel";

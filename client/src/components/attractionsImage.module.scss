@@ -1,41 +1,52 @@
-.attractionsImage {
-  width: 300px;
-  transition: opacity 0.3s ease-in-out;
-  position: relative;
-
-  &__show {
-    opacity: 1;
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  &__hide {      
-    opacity: 0;
-    animation: slideOut 0.5s ease-in-out;
-  }
-}
+@import '../styles/fonts.scss';
 
 .attractionsCard {
+  cursor: pointer;
+  width: 250px;
+  height: 400px;
+  transition: opacity 0.3s ease-in-out;
+  position: relative;
+  margin: 0;
+
+  &:hover {
+    .attractionsCard_Image_Overlay{
+      opacity: 0.5;
+    }
+
+    .attractionsCard_Link {
+      opacity: 1;
+    }
+  }
+
   &_Image {
     max-height: 100%;
-    width: inherit;
+    height: 100%;
     object-fit: cover;
-  }
-}
 
-@keyframes slideIn {
-  0% {
-    transform: translateX(-50px);
+    &_Overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;      
+      transition: .5s ease-in-out;
+      opacity: 0;
+      background-color: rgb(68, 68, 68);
+    }
   }
-  100% {
-    transform: translateX(0);
-  }
-}
 
-@keyframes slideOut {
-  0% {
-    transform: translateX(0);  
-  }
-  100% {
-    transform: translateX(-50px);
+  &_Link {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $headerFontFamily;
+    color: #FFF;
+    font-size: 2em;
+    text-align: center;
+    transition: .5s ease-in-out;
+    opacity: 0;
   }
 }

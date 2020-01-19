@@ -1,11 +1,55 @@
+@import '../styles/fonts.scss';
+
 .attractionsContainer {
   padding: 50px 80px;
+
+  &__show {
+    opacity: 1;
+    animation: slideUp 3s ease-in-out;
+  }
+  
+  &__hide {      
+    opacity: 0;
+    animation: slideDown 0.5s ease-in-out;
+  }
+
+  &_Header {
+    font-family: $headerFontFamily;
+    font-size: 3.5em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &_Description {
+    font-size: 1.5em;
+    font-family: $paragraphFontFamily;
+    line-height: 140%;
+    text-align: center;
+  }
 
   &_list {
     display: flex;
     list-style-type: none;    
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 5rem 0;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-80px);
   }
 }

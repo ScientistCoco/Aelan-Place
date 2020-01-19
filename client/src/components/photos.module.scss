@@ -4,6 +4,8 @@
 .photosContainer {
   padding: 100px 20px;
   transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
 
   @include lg {
     padding: 200px 80px;
@@ -11,39 +13,41 @@
 
   &__show {
     opacity: 1;
-    animation: slideUp 1s ease-in-out;
+    animation: slideIn 1s ease-in-out;
   }
 
   &__hide {
     opacity: 0;
-    animation: slideDown 1s ease-in-out;
+    animation: slideOut 1s ease-in-out;
   }
 
   &_info {  
-    @include xl {
-      padding: 0 300px;      
-    } 
-    text-align: center;    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 100px;
   }
 
   &_header {
-      font-family: $mainFontFamily;
-      font-weight: bold;
+    font-family: $headerFontFamily;    
+    font-size: 3.5em;
+    font-weight: 500;
   }
   
-  &_description {
-    font-size: 1.1em;
+  &_description {    
+    font-size: 1.5em;
+    font-family: $paragraphFontFamily;
+    line-height: 140%;
   }
 
   &_carousel {  
     $arrowColor: slategrey;    
+    flex: 2;
 
     &_photos {
-      max-height: 1000px;
-      max-width: 1000px;
-      overflow: hidden;    
-      left: 50%;
-      transform: translateX(-50%);
+      height: 100%;
+      width: 100%;
     }
 
     &_navigator {
@@ -59,20 +63,20 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slideIn {
   0% {
-    transform: translateY(100px);
+    transform: translateX(-50px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-@keyframes slideDown {
+@keyframes slideOut {
   0% {
-    transform: translateY(0);
+    transform: translateX(0);  
   }
   100% {
-    transform: translateY(-80px);
+    transform: translateX(-50px);
   }
 }

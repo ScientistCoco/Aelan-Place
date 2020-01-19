@@ -7,14 +7,22 @@
   z-index: 3;
 
   &_icon {
-    color: white;
-    font-size: 2.5em;
+    font-size: 2.8em;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+    &__white {
+      color: white;
+    }
+
+    &__black {
+      color: #444;
+    }
   }
 }
 
 .menu_icon {
-  width: 45px;
+  width: 40px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -48,11 +56,11 @@
   }  
 
   span:nth-child(2), span:nth-child(3) {
-    top: 12px;
+    top: 11px;
   }
 
   span:nth-child(4) {
-    top: 24px;
+    top: 22px;
   }  
 
   &.menu_icon__open {

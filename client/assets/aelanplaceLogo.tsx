@@ -17,7 +17,6 @@ const SvgAelanplaceLogo = (props: any) => {
         >
           <path fill="none" d="M-134-95h500v500h-500z" />
         </clipPath>
-        <style>{".aelanplaceLogo_svg__cls-3{fill:#fff}"}</style>
       </defs>
       <g clipPath="url(#aelanplaceLogo_svg__clip-path)">
         <path

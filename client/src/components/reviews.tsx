@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from 'antd';
+import { Carousel } from "../components";
 import CMS from "../../content/homepageCMS.json";
 import * as styles from "../components/reviews.module.scss";
 
@@ -20,9 +20,6 @@ export class Reviews extends React.Component<IReviews> {
     return (
       reviewsSection.reviews.map((item: IReviewsCMS, index: number) => (
         <div className={styles.reviewsComment} key={index}>
-          <Avatar size={64} >
-            {item.name.charAt(0).toUpperCase()}
-          </Avatar>
           <p className={styles.reviewsComment_description}>“{item.comment}”</p> 
           <p className={styles.reviewsComment_user}>- {item.name}</p>
         </div>
@@ -40,7 +37,9 @@ export class Reviews extends React.Component<IReviews> {
       >        
         <h1 className={styles.reviewsContainer_title}>{reviewsSection.title}</h1>
         <div className={styles.reviewsComment_container}>
-          {this.renderComments()}
+          <Carousel name="reviews" dots={false}>
+            {this.renderComments()}
+          </Carousel>
         </div>
       </div>
     )

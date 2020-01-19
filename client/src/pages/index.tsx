@@ -1,9 +1,10 @@
-import React from "react"
-import { Button } from 'antd';
-import { Link } from "gatsby"
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "gatsby";
 import * as styles from "./index.module.scss";
 
 import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer, SEO } from "../components";
+import { AelanPlaceFontLogo } from "../../assets";
 import { post } from "../helpers";
 import CMS from "../../content/homepageCMS.json";
 
@@ -91,25 +92,27 @@ class IndexPage extends React.Component<any, any> {
     return (
       <Layout>
           <SEO title="Overview" />
-          <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>      
           <Modal showModal={menuToggled} />
+          <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>      
           {!menuToggled &&
             <>
               <div className={styles.introContainer}>          
                 <Image filename="aelan_8.jpg" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
                 <div className={styles.introContainer_main}>
-                  <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>
-                  <p className={styles.introContainer_subtitle}>{CMS.landingSubtitle}</p>
-                  <div className={styles.introContainer_buttons}>
-                    <Button type="primary" shape="round" size="large"><Link to="/apartments">{CMS.exploreBtn}</Link></Button>
-                    <Button ghost shape="round" size="large"><Link to="/contact">{CMS.contactBtn}</Link></Button>
+                  <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>                  
+                  <AelanPlaceFontLogo className={styles.introContainer_locationName}/>
+                  <h1 className={styles.introContainer_title}>{CMS.landingSubtitle}</h1>
+                  <br/>
+                  <div className={styles.introContainer_links}>
+                    <Link to="/apartments" className={styles.introContainer_links_item}>{CMS.exploreBtn}</Link>
+                    <Link to="/contact" className={styles.introContainer_links_item}>{CMS.contactBtn}</Link>
                     {/* <Button type="primary" shape="round" size="large" onClick={this.fetchAvailabilities}>Test</Button> */}
                   </div>
                 </div>
-                <p className={styles.introContainer_scroll}><span className={styles.introContainer_scroll_arrow}/>Scroll</p>
+                <ScrollLink className={styles.introContainer_scroll} to="photos_section" smooth={true}><span className={styles.introContainer_scroll_arrow}/></ScrollLink>                
               </div>
-              <Attractions show={showAttractions} htmlRef={this.attractionsRef}/>
               <Photos show={showPhotos} htmlRef={this.photosRef}/>
+              <Attractions show={showAttractions} htmlRef={this.attractionsRef}/>
               <Reviews show={showReviews} htmlRef={this.reviewsRef}/>
               <Footer />
             </>

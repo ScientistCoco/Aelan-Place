@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import CMS from "../../content/footerCMS.json";
 import * as styles from "./modal.module.scss";
+import { Icon } from "antd";
+import { AirBnbLogo, FacebookLogo } from "../../assets";
 
 interface IModal {
   showModal: boolean;
@@ -17,19 +19,18 @@ export const Modal = (props: IModal) => (
       </ol>
       <div className={styles.menuContacts}>
         <div className={styles.menuContacts_Info}>
-          <h5 className={styles.menuContacts_header}>CONTACT INFO</h5>
-          <p>{CMS.email}</p>
+          <h1 className={styles.menuContacts_header}>Have a question?</h1>
+          <p className={styles.menuContacts_email}>{CMS.email}</p>
         </div>            
         <div className={styles.menuContacts_SocialMedia}>
-          <h5 className={styles.menuContacts_header}>CONNECT WITH US</h5>
           <p>
             <a href={CMS.facebook} target="__blank" className={styles.menuContainer_connect_item}>
-              Facebook
+              <Icon component={FacebookLogo} />
             </a>
           </p>
           <p>
             <a href={CMS.airbnb} target="__blank" className={styles.menuContainer_connect_item}>
-              AirBnb
+            <Icon component={AirBnbLogo} />
             </a>
           </p>
         </div>

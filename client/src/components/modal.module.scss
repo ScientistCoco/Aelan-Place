@@ -1,7 +1,11 @@
 @import '../styles/breakpoints.scss';
 @import '../styles/fonts.scss';
 
+$fontColor: #444444;
+
 .menuContainer {
+  color: $fontColor;
+  font-family: $paragraphFontFamily;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -16,7 +20,9 @@
 
   &_connect {
     &_item {
-      color: inherit;
+      color: $fontColor;
+      font-size: 2em;
+      padding-right: 1rem;
     }
   }
 }
@@ -25,26 +31,32 @@
   list-style-type: none;
   font-size: 2.5em;
   font-weight: bold;
-  font-family: $mainFontFamily;
 
   &_li * {
     cursor: pointer;
-    color: black;
+    color: $fontColor;
   }
 }
 
 .menuContacts {
-    @include lg {
-    display: flex;
-  }
-
   > * {
     margin: 0 32px;
   }
 
-  &_header {
-    color: slategrey;
+  &_header {    
     margin-bottom: 24px;
+    font-family: $headerFontFamily;
+    font-size: 1.7em;
+    font-weight: 500;
+  }
+
+  &_email {
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+
+  &_SocialMedia {
+    display: flex;
   }
 }
 
@@ -52,8 +64,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgb(230, 230, 230);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;  
 
   &_open {
     opacity: 1;

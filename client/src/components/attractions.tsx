@@ -20,11 +20,15 @@ export class Attractions extends React.Component<IAttractions> {
     const { visitSection } = CMS;
 
     return (
-      <div className={styles.attractionsContainer} ref={this.props.htmlRef} id="attractions">
-        <p style={{ fontFamily: 'Mukta Mahee, arial, sans-serif', fontWeight: 'bold', color: 'slategray', paddingBottom: '20px' }}>{visitSection.title}</p>
+      <div className={`${styles.attractionsContainer} ${show ? styles.attractionsContainer__show : styles.attractionsContainer__hide}`} 
+        ref={this.props.htmlRef} 
+        id="attractions"
+      >
+        <h1 className={styles.attractionsContainer_Header}>{visitSection.title}</h1>
+        <p className={styles.attractionsContainer_Description}>{visitSection.subtitle}</p>
         <div>
           <ol className={styles.attractionsContainer_list}>
-            { visitSection.places.map((item: IPlaceItem) => <AttractionsImage show={show} {...item}/>)}
+            { visitSection.places.map((item: IPlaceItem) => <AttractionsImage {...item}/>)}
           </ol>
         </div>
       </div>

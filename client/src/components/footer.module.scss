@@ -1,17 +1,25 @@
-$footerFontColor: rgb(190, 190, 190);
+@import '../styles/fonts.scss';
+
+$footerFontColor: #444444;
 
 .footerContainer {
-  background-color: rgb(39, 39, 39);
   color: $footerFontColor;
   height: 100%;
   padding: 50px 80px;
+  font-family: $paragraphFontFamily;
+  font-size: 1.2em;
+
+  &_aelanLogo {
+    font-size: 3em;
+  }
 
   &_contacts {
     &_header {
-      color: white;
-      font-style: italic;
+      font-family: $headerFontFamily;      
+      font-size: 1.2em;
+      font-weight: 500;
     }
-  }
+  }  
 
   &_section {
     display: flex;
@@ -23,25 +31,27 @@ $footerFontColor: rgb(190, 190, 190);
         color: inherit;
       }
     }
+
+    &_socialmedia {
+      display: flex;
+
+      &_icon {
+        font-size: 1.8em;   
+        padding-right: 1rem;     
+      }
+
+      * {
+        margin: 0;
+      }
+    }
+
+    &__space {
+      flex: 0.6;
+    }
   }
 
   &_horizontalline {
     border-bottom: 0.1em solid $footerFontColor;
     margin: 40px 0;
-  }
-
-  &_footer {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-
-    &_links {
-      font-size: 1.5em;
-      
-      >* {
-       margin: 0 10px; 
-       cursor: pointer;
-      }
-    }
   }
 }
