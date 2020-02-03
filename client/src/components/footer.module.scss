@@ -1,3 +1,4 @@
+@import '../styles/breakpoints.scss';
 @import '../styles/fonts.scss';
 
 $footerFontColor: #444444;
@@ -5,9 +6,14 @@ $footerFontColor: #444444;
 .footerContainer {
   color: $footerFontColor;
   height: 100%;
-  padding: 50px 80px;
+  padding: 50px $mobile-horizontal-padding;
   font-family: $paragraphFontFamily;
-  font-size: 1.2em;
+  font-size: 1em;
+
+  @include lg {
+    font-size: 1.2em;
+    padding: 50px 80px;
+  }
 
   &_aelanLogo {
     font-size: 3em;
@@ -18,17 +24,37 @@ $footerFontColor: #444444;
       font-family: $headerFontFamily;      
       font-size: 1.2em;
       font-weight: 500;
+
+      @include lg {
+        font-size: 1.2em;
+      }
     }
   }  
 
   &_section {
     display: flex;
-    
+    flex-direction: column;    
+
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     &_item {
       flex: 0.2;
 
       &_link {
         color: inherit;
+      }
+
+      &_container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        
+        @include lg {
+          width: 50%;
+        }
       }
     }
 

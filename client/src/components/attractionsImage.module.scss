@@ -1,12 +1,18 @@
+@import '../styles/breakpoints.scss';
 @import '../styles/fonts.scss';
 
 .attractionsCard {
   cursor: pointer;
-  width: 250px;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   transition: opacity 0.3s ease-in-out;
   position: relative;
   margin: 0;
+
+  @include lg {
+    width: 250px;
+    height: 400px;
+  }
 
   &:hover {
     .attractionsCard_Image_Overlay{

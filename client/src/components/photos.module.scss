@@ -2,13 +2,15 @@
 @import '../styles/fonts.scss';
 
 .photosContainer {
-  padding: 100px 20px;
+  padding: 100px 0;
   transition: opacity 0.5s ease-in-out;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   @include lg {
     padding: 200px 80px;
+    flex-direction: row;
   }  
 
   &__show {
@@ -26,19 +28,20 @@
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    margin-right: 100px;
+    padding: 0 $mobile-horizontal-padding;
+
+    @include lg {
+      margin-right: 100px;
+      padding: 0;
+    }
   }
 
   &_header {
-    font-family: $headerFontFamily;    
-    font-size: 3.5em;
-    font-weight: 500;
+    @include headerFont;
   }
   
   &_description {    
-    font-size: 1.5em;
-    font-family: $paragraphFontFamily;
-    line-height: 140%;
+    @include descriptionFont;
   }
 
   &_carousel {  

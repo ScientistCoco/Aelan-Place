@@ -30,9 +30,10 @@
   &_locationName {
     font-family: $paragraphFontFamily;
     color: white;
-    font-size: 30em;
+    font-size: 15em;
     font-style: normal;
     font-weight: bold;
+    padding: 1rem 0;
 
     @include lg {
       font-size: 38em;
@@ -76,7 +77,8 @@
 .introContainer_links {
   display: flex;
   flex-direction: column;
-  
+  line-height: 3rem;
+
   @include lg {
     display: block;
     line-height: 8em;

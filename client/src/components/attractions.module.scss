@@ -1,30 +1,41 @@
+@import '../styles/breakpoints.scss';
 @import '../styles/fonts.scss';
 
 .attractionsContainer {
-  padding: 50px 80px;
+  padding: 50px 0;
+
+  @include lg {
+    padding: 50px 80px;
+  }
 
   &__show {
     opacity: 1;
-    animation: slideUp 3s ease-in-out;
+    animation: slideUp 1s ease-in-out;
   }
   
   &__hide {      
     opacity: 0;
-    animation: slideDown 0.5s ease-in-out;
+    animation: slideDown 1s ease-in-out;
   }
 
   &_Header {
-    font-family: $headerFontFamily;
-    font-size: 3.5em;
-    font-weight: 500;
-    text-align: center;
+    @include headerFont;
+    
+    @include lg {
+      text-align: center;
+    }
   }
 
   &_Description {
-    font-size: 1.5em;
-    font-family: $paragraphFontFamily;
-    line-height: 140%;
-    text-align: center;
+    @include descriptionFont;
+    
+    @include lg {
+      text-align: center;
+    }
+  }
+
+  &_Info {
+    padding: 0 $mobile-horizontal-padding;
   }
 
   &_list {

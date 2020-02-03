@@ -20,28 +20,17 @@
   }
 
   &_header {
-    font-weight: bolder;
-    font-family: $mainFontFamily;
+    @include headerFont;
     color: white;
-    font-size: 2em;
-
-    @include lg {
-      font-size: 4em;
-    }
   }
 
   &_subtitle {
-    font-size: 1em;
-    font-family: $mainFontFamily;
+    @include descriptionFont;
     color: white;
-
-    @include lg { 
-      font-size: 1.5em;
-    }
   }
 }
 
-.contactForm {
+.contactForm {  
   &_container {
     background-color: #8BC34A;
     position: relative;
@@ -71,10 +60,8 @@
   }
 
   &_field {
-    padding: 5px 0;
-    font-family: $mainFontFamily;
+    padding: 0.5rem 0;
     color: #868686;
-    line-height: 2;
   }
 
   &_details {
@@ -92,13 +79,10 @@
     }
 
     &_label {
-      font-size: 1em;
       opacity: 0.5;
-      font-family: "Mukta Mahee", arial, sans-serif;
     }
 
     &_text {
-      font-size: 2em;
       font-weight: 300;
     }
   }

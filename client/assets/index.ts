@@ -6,3 +6,4 @@ export { default as AelanPlaceLogo } from "./aelanplaceLogo";
 export { default as AelanPlaceFontLogo } from "./aelanplaceFontLogo";
 export { default as FacebookLogo } from "./facebook";
 export { default as AirBnbLogo } from "./airbnb";
+export { default as AelanPlaceFontLogoMobile } from "./aelanplaceFontLogoMobile";

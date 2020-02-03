@@ -1,10 +1,11 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "gatsby";
+import MediaQuery from "react-responsive";
 import * as styles from "./index.module.scss";
 
 import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer, SEO } from "../components";
-import { AelanPlaceFontLogo } from "../../assets";
+import { AelanPlaceFontLogo, AelanPlaceFontLogoMobile } from "../../assets";
 import { post } from "../helpers";
 import CMS from "../../content/homepageCMS.json";
 
@@ -44,9 +45,9 @@ class IndexPage extends React.Component<any, any> {
 
     const { showAttractions, showPhotos, showReviews } = this.state;
 
-    const hasReachedShowAttractions = (window.scrollY + attractionsRef.getBoundingClientRect().top) / 3 < window.scrollY;
+    const hasReachedShowAttractions = (window.scrollY + attractionsRef.getBoundingClientRect().top) / 2 < window.scrollY;
     const hasReachedShowPhotos = (window.scrollY + photosRef.getBoundingClientRect().top) / 2 < window.scrollY;
-    const hasReachedShowReviews = (window.scrollY + reviewsRef.getBoundingClientRect().top) / 2 < window.scrollY;
+    const hasReachedShowReviews = (window.scrollY + reviewsRef.getBoundingClientRect().top) / 1.5 < window.scrollY;
 
     if (showAttractions !== hasReachedShowAttractions) {
       this.setState({ showAttractions: hasReachedShowAttractions });
@@ -100,7 +101,12 @@ class IndexPage extends React.Component<any, any> {
                 <Image filename="aelan_8.jpg" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
                 <div className={styles.introContainer_main}>
                   <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>                  
-                  <AelanPlaceFontLogo className={styles.introContainer_locationName}/>
+                  <MediaQuery minDeviceWidth={992}>
+                    <AelanPlaceFontLogo className={styles.introContainer_locationName}/>
+                  </MediaQuery>
+                  <MediaQuery maxDeviceWidth={992}>
+                    <AelanPlaceFontLogoMobile className={styles.introContainer_locationName}/>
+                  </MediaQuery>
                   <h1 className={styles.introContainer_title}>{CMS.landingSubtitle}</h1>
                   <br/>
                   <div className={styles.introContainer_links}>

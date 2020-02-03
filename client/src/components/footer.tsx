@@ -30,31 +30,33 @@ export class Footer extends React.Component<any> {
         <div className={styles.footerContainer_section}>
           <div className={`${styles.footerContainer_section_item} ${styles.footerContainer_section__space}`}>
             <Icon component={AelanPlaceLogo} className={styles.footerContainer_aelanLogo}/>
-          </div>          
-          <div className={styles.footerContainer_section_item}>
-            <p>
-              <Link to="/about/" className={styles.footerContainer_section_item_link}>
-                About
-              </Link>
-            </p>
-            <p>
-              <Link to="/apartments/" className={styles.footerContainer_section_item_link}>
-                Apartments
-              </Link>
-            </p>
-            <p>
-              <Link to="/contact/" className={styles.footerContainer_section_item_link}>
-                Contact Us
-              </Link>
-            </p>
-          </div>
-          <div className={styles.footerContainer_section_item}>
-            {this.renderContactsInfo("Have a question?", email)}
-            <div className={styles.footerContainer_section_socialmedia}>
-              {this.renderContactsInfo("", <Icon component={AirBnbLogo} className={styles.footerContainer_section_socialmedia_icon}/>, airbnb)}        
-              {this.renderContactsInfo("", <Icon component={FacebookLogo} className={styles.footerContainer_section_socialmedia_icon}/>, facebook)}        
+          </div>        
+          <div className={styles.footerContainer_section_item_container}>
+            <div className={styles.footerContainer_section_item}>
+              <p>
+                <Link to="/about/" className={styles.footerContainer_section_item_link}>
+                  About
+                </Link>
+              </p>
+              <p>
+                <Link to="/apartments/" className={styles.footerContainer_section_item_link}>
+                  Apartments
+                </Link>
+              </p>
+              <p>
+                <Link to="/contact/" className={styles.footerContainer_section_item_link}>
+                  Contact Us
+                </Link>
+              </p>
             </div>
-          </div>
+            <div className={styles.footerContainer_section_item}>
+              {this.renderContactsInfo("Have a question?", email)}
+              <div className={styles.footerContainer_section_socialmedia}>
+                {this.renderContactsInfo("", <Icon component={AirBnbLogo} className={styles.footerContainer_section_socialmedia_icon}/>, airbnb)}        
+                {this.renderContactsInfo("", <Icon component={FacebookLogo} className={styles.footerContainer_section_socialmedia_icon}/>, facebook)}        
+              </div>
+            </div>
+          </div>  
         </div>
       </div>
     )

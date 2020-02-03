@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant:400,500|Montserrat:400,500&display=swap');
 
-$mainFontFamily: 'Merriweather', serif;
 $headerFontFamily: 'Cormorant', serif;
 $paragraphFontFamily: 'Montserrat', sans-serif;
+
+$mobileDescriptionFontSize: 1.1em;
+$mobileHeaderFontSize: 2.5em;
+$desktopDescriptionFontSize: 1.2em;
+$desktopHeaderFontSize: 3.5em;
+
+@mixin headerFont {
+  font-family: $headerFontFamily;    
+  font-size: 2.5em;
+  font-weight: 500;
+
+  @include lg {
+    font-size: $desktopHeaderFontSize;
+  }
+}
+
+@mixin descriptionFont {
+  font-size: $mobileDescriptionFontSize;
+  font-family: $paragraphFontFamily;
+  line-height: 140%;
+
+  @include lg {
+    font-size: $desktopDescriptionFontSize;
+  }
+}

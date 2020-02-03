@@ -9,10 +9,16 @@ $fontColor: #444444;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   left: 50%;
   top: 50%;    
   transform: translate(-50%, -50%);
+  height: 100%;
+
+  @include lg {
+    height: fit-content;
+    justify-content: space-around;
+  }
 
   @include md {
     flex-direction: row;
@@ -31,7 +37,9 @@ $fontColor: #444444;
   list-style-type: none;
   font-size: 2.5em;
   font-weight: bold;
-
+  flex: 0.5;
+  margin: 0 2rem;
+  
   &_li * {
     cursor: pointer;
     color: $fontColor;
@@ -40,7 +48,7 @@ $fontColor: #444444;
 
 .menuContacts {
   > * {
-    margin: 0 32px;
+    margin: 0 2rem;
   }
 
   &_header {    
