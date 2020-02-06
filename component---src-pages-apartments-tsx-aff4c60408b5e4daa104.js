@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{191:function(t,e,r){"use strict";r.r(e);var n=r(0),o=r.n(n);var p=function(t){var e,r;function n(){return t.apply(this,arguments)||this}return r=t,(e=n).prototype=Object.create(r.prototype),e.prototype.constructor=e,e.__proto__=r,n.prototype.render=function(){return o.a.createElement("div",{className:"Apartments"},"Apartments")},n}(o.a.Component);e.default=p}}]);
-//# sourceMappingURL=component---src-pages-apartments-tsx-aff4c60408b5e4daa104.js.map
