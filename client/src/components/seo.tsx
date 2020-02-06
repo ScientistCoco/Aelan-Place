@@ -18,7 +18,7 @@ const SEO = ({ description, lang, meta, title }: any) => {
           siteMetadata {
             title
             description
-            author
+            googleSiteVerification
           }
         }
       }
@@ -50,23 +50,11 @@ const SEO = ({ description, lang, meta, title }: any) => {
         {
           property: `og:type`,
           content: `website`,
-        },
+        },  
         {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+          name: `google-site-verification`,
+          content: site.siteMetadata.googleSiteVerification,
+        }
       ].concat(meta)}
     />
   )
