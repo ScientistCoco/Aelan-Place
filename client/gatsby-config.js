@@ -7,6 +7,10 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === 'production';
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
+require("dotenv").config({
+  path: '.env',
+})
+
 module.exports = {
   pathPrefix: "/Aelan-Place",  
   siteMetadata: {
@@ -76,10 +80,10 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/aelan-place.png', // This path is relative to the root of the site.
       },
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
   proxy: {
     prefix: "/api",
