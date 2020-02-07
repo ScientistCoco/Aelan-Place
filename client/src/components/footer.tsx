@@ -11,7 +11,12 @@ export class Footer extends React.Component<any> {
     {header && <h1 className={styles.footerContainer_contacts_header}>{header}</h1>}
     { link ? 
       <p>
-        <a href={link} target="__blank" className={styles.footerContainer_section_item_link}>
+        <a href={link} 
+          target="__blank" 
+          className={styles.footerContainer_section_item_link} 
+          rel="noreferrer"
+          aria-label={description}
+        >
           {description}
         </a>
       </p>

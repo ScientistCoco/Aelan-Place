@@ -25,7 +25,7 @@ export class AttractionsImage extends React.Component<IAttractionsImage, any> {
       <li className={styles.attractionsCard}>
         <Image className={styles.attractionsCard_Image} filename={photo}/>            
         <div className={styles.attractionsCard_Image_Overlay}/>
-        <a className={styles.attractionsCard_Link} href={link} target="_blank">
+        <a className={styles.attractionsCard_Link} href={link} target="_blank" rel="noreferrer">
           <p>{locationName}</p>
         </a>
     </li>

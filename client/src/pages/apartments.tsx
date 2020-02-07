@@ -68,7 +68,7 @@ class Apartments extends React.Component<any, any> {
         </div>
         <p>{apartment.description}</p>
         <Button type="primary" shape="round" size="large">
-          <a href={apartment.link} target="__blank">
+          <a href={apartment.link} target="__blank" rel="noreferrer">
             {apartment.button}
           </a>
         </Button>

@@ -24,12 +24,22 @@ export const Modal = (props: IModal) => (
         </div>            
         <div className={styles.menuContacts_SocialMedia}>
           <p>
-            <a href={CMS.facebook} target="__blank" className={styles.menuContainer_connect_item}>
+            <a href={CMS.facebook} 
+              target="__blank" 
+              className={styles.menuContainer_connect_item} 
+              rel="noreferrer"
+              aria-label="Facebook link"
+            >
               <Icon component={FacebookLogo} />
             </a>
           </p>
           <p>
-            <a href={CMS.airbnb} target="__blank" className={styles.menuContainer_connect_item}>
+            <a href={CMS.airbnb} 
+              target="__blank"
+              className={styles.menuContainer_connect_item} 
+              rel="noreferrer"
+              aria-label="Airbnb link"
+            >
             <Icon component={AirBnbLogo} />
             </a>
           </p>

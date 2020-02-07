@@ -70,7 +70,6 @@ export class Carousel extends React.Component<ICarousel, any> {
               {children.map((item: any, index: number) => (
                 <label 
                   htmlFor={`${name}_Carousel_Img_${index}`} 
-                  id={`Carousel_Img_Dot_${index}`}
                   className={`${styles.Carousel_Dots_Item} 
                     ${Number(checkedIndex) === index ? styles.Carousel_Dots_Item__active: styles.Carousel_Dots_Item__inactive}`} 
                 />

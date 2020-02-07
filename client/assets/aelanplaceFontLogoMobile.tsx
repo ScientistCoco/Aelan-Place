@@ -3,7 +3,6 @@ import React from "react"
 function SvgAelanplaceFontLogoMobile(props: any) {
   return (
     <svg
-      id="aelanplaceFontLogoMobile_svg__Layer_1"
       data-name="Layer 1"
       viewBox="0 0 261.9 110.76"
       {...props}
