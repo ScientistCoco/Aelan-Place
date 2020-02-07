@@ -26,24 +26,24 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-345e735ee10eedabae29.js"
+    "url": "webpack-runtime-2e015fcfd6f0be4ae793.js"
   },
   {
     "url": "netlify-identity-widget-adf2877c9f40e7f7f0ef.js"
   },
   {
-    "url": "app-c77fa958bc45c8df37d2.js"
+    "url": "app-161ad4f339b5476c94dd.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-ca05f99a3bc917f00055.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "030c7d98e597709c5f5f468898cb5754"
+    "revision": "6fa02c04d4455c2233ff62b79d3ebf5d"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "e26c1121a86b505f0c81baa9df361282"
+    "revision": "212094679574c2a4b7e98bab27e990bd"
   },
   {
     "url": "manifest.webmanifest",
@@ -71,7 +71,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/Aelan-Place/app-c77fa958bc45c8df37d2.js`))) {
+  if (!resources || !(await caches.match(`/Aelan-Place/app-161ad4f339b5476c94dd.js`))) {
     return await fetch(event.request)
   }
 
