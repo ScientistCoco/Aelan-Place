@@ -1,50 +1,58 @@
 @import '../styles/breakpoints.scss';
 @import '../styles/fonts.scss';
 
+
 .introContainer {
   position: relative;
   
   &_main {
     left: 50%;
-    top: 50%;
+    top: 55%;
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
   }
 
   &_title {
-    font-weight: bolder;
-    font-style: italic;
-    font-family: $mainFontFamily;
     color: white;
+    font-family: $headerFontFamily;
     font-size: 2em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0;
 
     @include lg {
-      font-size: 4em;
+      font-size: 2em;
     }
   }
 
-  &_subtitle {
-    font-size: 1em;
-    font-family: $mainFontFamily;
+  &_locationName {
+    font-family: $paragraphFontFamily;
     color: white;
+    font-size: 15em;
+    font-style: normal;
+    font-weight: bold;
+    padding: 1rem 0;
 
     @include lg {
-      font-size: 1.5em;
+      font-size: 38em;
     }
   }
 
   &_scroll {
-    position: absolute;
     bottom: 20px;
-    left: 50%;
-    z-index: 2;
-    display: inline-block;
-    transform: translate(-50%, -50%);
     color: #fff;
+    display: inline-block;
+    font-family: $paragraphFontFamily;
+    left: 50%;
     letter-spacing: .1em;
+    position: absolute;
+    transform: translate(-50%, -50%);
     text-decoration: none;
     transition: opacity .3s;
+    z-index: 2;
+    font-size: 1em;
 
     &:hover {
       opacity: .5;
@@ -66,18 +74,24 @@
   }
 }
 
-.introContainer_buttons {
+.introContainer_links {
   display: flex;
   flex-direction: column;
-  
+  line-height: 3rem;
+
   @include lg {
     display: block;
+    line-height: 8em;
   }
   
-  >* {
-    margin: 0 5px;
-    margin-bottom: 16px;
-    font-family: $mainFontFamily;
+  &_item {
+    font-family: $paragraphFontFamily;
+    font-size: 1.3em;
+    margin: 0 14px;
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #fff;    
+    
   }
 }
 

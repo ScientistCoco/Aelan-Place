@@ -20,20 +20,13 @@
   }
 
   &_header {
-    font-weight: bolder;
-    font-family: $mainFontFamily;
-    color: white;
-    font-size: 2em;
+    @include headerFont;
 
-    @include lg {
-      font-size: 4em;
-    }
+    color: white;
   }
 }
 
-.aboutContent {
-  font-family: $mainFontFamily;
-  
+.aboutContent {  
   &_container {
     display: flex;
     flex-direction: column;
@@ -57,9 +50,13 @@
   }
 
   &_header {
-    font-family: $mainFontFamily;
+    @include headerFont;
   }
 
+  &_description {
+    @include descriptionFont;
+  }
+  
   &_media {
     position: relative;
     overflow: hidden;

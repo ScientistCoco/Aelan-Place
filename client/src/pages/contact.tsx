@@ -1,4 +1,5 @@
 import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Formik, Form, Field } from "formik";
 import { Button, message } from "antd";
 import { format, isFuture } from 'date-fns';
@@ -39,6 +40,7 @@ class Contact extends React.Component<any, any> {
       menuToggled: false,
       showBookingDates: false,
       loading: false,
+      recaptcha: false,
     }
   }
 
@@ -102,12 +104,16 @@ class Contact extends React.Component<any, any> {
     message.error('Failed to send', 0);
   }
 
+  handleReCaptcha = () => {
+    this.setState({ recaptcha: true });
+  }
+
   componentWillUnmount() {
     message.destroy();
   }
 
   render() {
-    const { loading, menuToggled, showBookingDates } = this.state; 
+    const { loading, menuToggled, showBookingDates, recaptcha } = this.state; 
     
     return (
       <Layout className={styles.contact}>
@@ -212,7 +218,9 @@ class Contact extends React.Component<any, any> {
                     autosize={{ minRows: 4, maxRows: 6 }}         
                   />
                 </div>
-                <Button type="primary" shape="round" htmlType="submit">Send message</Button>
+                <ReCAPTCHA sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY ? process.env.GATSBY_RECAPTCHA_SITE_KEY : ""} onChange={this.handleReCaptcha}/>
+                <br/>
+                <Button type="primary" shape="round" htmlType="submit" disabled={!recaptcha}>Send message</Button>
               </Form>                             
             </Formik>
             <div className={styles.contactForm_details}>

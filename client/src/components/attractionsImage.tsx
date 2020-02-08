@@ -1,12 +1,11 @@
 import React from "react";
-import { Card } from "antd";
+import { Image } from "../components";
 import * as styles from "../components/attractionsImage.module.scss";
 
 interface IAttractionsImage {
   locationName: string;
   photo: string;
   link: string;
-  show: boolean;
 }
 
 export class AttractionsImage extends React.Component<IAttractionsImage, any> {
@@ -14,46 +13,19 @@ export class AttractionsImage extends React.Component<IAttractionsImage, any> {
     super(props);
 
     this.state = {
-      loading: true,
+      loading: false,
       photo: ""
     }
   }
 
-  async componentDidMount() {
-    const { photo } = this.props;
-
-    const resp = await fetch(`https://cors-anywhere.herokuapp.com/${photo}`);
-    const blob = await resp.blob();
-    const localURl = URL.createObjectURL(blob);
-    
-    this.setState({
-      loading: false,
-      photo: localURl
-    })
-  }
-
   render() {
-    const { loading, photo } = this.state;
-    const { show, link, locationName } = this.props;
+    const { link, locationName, photo } = this.props;
 
     return (
-      <li className={`${styles.attractionsImage} ${show ? styles.attractionsImage__show : styles.attractionsImage__hide}`}>
-        <Card         
-          bodyStyle={{ padding: 0, width: '300px', height: '170px' }} 
-          loading={loading} 
-          bordered={loading}
-        >
-          {photo ? 
-            <img className={styles.attractionsCard_Image} src={photo} 
-            />
-            :
-            <img className={styles.attractionsCard_Image} 
-              onLoad={() => this.setState({ loading: false })}
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"/>
-          }
-        </Card>
-        <br/>
-        <a href={link} target="_blank">
+      <li className={styles.attractionsCard}>
+        <Image className={styles.attractionsCard_Image} filename={photo}/>            
+        <div className={styles.attractionsCard_Image_Overlay}/>
+        <a className={styles.attractionsCard_Link} href={link} target="_blank" rel="noreferrer">
           <p>{locationName}</p>
         </a>
     </li>

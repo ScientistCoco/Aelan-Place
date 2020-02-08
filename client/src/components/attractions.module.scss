@@ -1,11 +1,66 @@
+@import '../styles/breakpoints.scss';
+@import '../styles/fonts.scss';
+
 .attractionsContainer {
-  padding: 50px 80px;
+  padding: 50px 0;
+
+  @include lg {
+    padding: 50px 80px;
+  }
+
+  &__show {
+    opacity: 1;
+    animation: slideUp 1s ease-in-out;
+  }
+  
+  &__hide {      
+    opacity: 0;
+    animation: slideDown 1s ease-in-out;
+  }
+
+  &_Header {
+    @include headerFont;
+    
+    @include lg {
+      text-align: center;
+    }
+  }
+
+  &_Description {
+    @include descriptionFont;
+    
+    @include lg {
+      text-align: center;
+    }
+  }
+
+  &_Info {
+    padding: 0 $mobile-horizontal-padding;
+  }
 
   &_list {
     display: flex;
     list-style-type: none;    
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 5rem 0;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-80px);
   }
 }

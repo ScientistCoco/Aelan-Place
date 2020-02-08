@@ -1,39 +1,41 @@
 {
-  "landingTitle": "Welcome to Aelan place",
+  "landingTitle": "Welcome to",
+  "landingTitleName": "Aelan Place",
   "landingSubtitle": "Cosy tropical apartments",
-  "exploreBtn": "Explore the beauty",
-  "contactBtn": "Contact us",
+  "exploreBtn": "Explore",
+  "contactBtn": "Contact",
   "visitSection": {
-    "title": "YOU CAN VISIT",
+    "title": "Explore the island",
+    "subtitle": "Espiritu Santo island offers some of the best natural wonders you can see. Explore the island at your own pace.",
     "places": [
       {
         "locationName": "Million Dollar Point",
-        "photo": "//live.staticflickr.com/718/31848201832_51a7ab8bc9_n.jpg",
+        "photo": "million_dollar_point.jpg",
         "link": "https://www.santo.travel/million-dollar-point"
       },
       {
-        "locationName": "Millennium Cave",
-        "photo": "https://nui.nz/wp-content/uploads/2018/04/P1000323.jpg",
-        "link": "https://www.santo.travel/millenium-cave"
-      },
-      {
         "locationName": "Champagne Beach",
-        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5LeDl1VWsYvaqnql7Nf5dZSTZNAWNaLPrvrRUBxPsQpNsqtSk",
+        "photo": "champagne_beach.jpg",
         "link": "https://www.santo.travel/champagne-beach"
       },
       {
+        "locationName": "Port Olry",
+        "photo": "port_olry.jpg",
+        "link": "https://vanuatu.com.au/things-to-do/port-olry-beach/"
+      },
+      {
         "locationName": "Matevulu Blue Hole",
-        "photo": "https://live.staticflickr.com/8370/8588698034_8cdc392e12_c.jpg",
+        "photo": "matevulu_blue_hole.jpg",
         "link": "https://www.vanuatu.travel/en/play/see-and-do/blue-holes/matevulu-blue-hole"
       }
     ]
   },
   "photosSection": {
-    "title": "A gorgeous place to enjoy your holiday",
-    "subtitle": "Located at the centre of Luganville, Vanuatu. We offer rooms to suit your basic holiday needs."
+    "title": "A place like no other.",
+    "subtitle": "Aelan Place apartments are located at the heart of Luganville, Vanuatu. Our apartments offer all the necessities to suit your holiday needs."
   },
   "reviewsSection": {
-    "title": "Reviews",
+    "title": "What our guests have to say",
     "reviews": [
       {
         "name": "Daniel",

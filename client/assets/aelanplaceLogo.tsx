@@ -2,8 +2,7 @@ import React from "react"
 
 const SvgAelanplaceLogo = (props: any) => {   
   return (
-    <svg
-      id="aelanplaceLogo_svg__Layer_1"
+    <svg    
       data-name="Layer 1"
       viewBox="0 0 224.2 290.76"      
       width="1em"
@@ -12,12 +11,10 @@ const SvgAelanplaceLogo = (props: any) => {
     >
       <defs>
         <clipPath
-          id="aelanplaceLogo_svg__clip-path"
           transform="translate(-3.9 -9.62)"
         >
           <path fill="none" d="M-134-95h500v500h-500z" />
         </clipPath>
-        <style>{".aelanplaceLogo_svg__cls-3{fill:#fff}"}</style>
       </defs>
       <g clipPath="url(#aelanplaceLogo_svg__clip-path)">
         <path

@@ -1,0 +1,67 @@
+.Carousel {  
+  &_Slides {
+    all: unset;
+  }
+
+  &_Slide {
+    &_Container {
+      list-style: none;
+      margin: 0;
+    }
+
+    &_Image {
+      opacity: 0;
+      transition: all .7s ease-in-out;
+      display: none;      
+    } 
+
+    &_Input {
+      display: none;
+
+      &:checked +.Carousel_Slide_Container .Carousel_Slide_Image {
+        animation: fadeIn 1s ease-in-out;
+        display: block;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+    }
+  }
+
+  &_Dots {    
+    display: flex;
+    justify-content: center;
+
+    &_Item {
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #E1E1E1;
+      border-radius: 50%;
+      margin: 10px;
+
+      &__active {
+        background-color: #E1E1E1;
+      }
+
+      &__inactive {
+        background-color: none;
+      }
+    }
+  }
+
+  &_Arrows {
+    all: unset;
+    cursor: pointer;
+    font-size: 2em;
+    color: rgba(68, 68, 68, 0.3);
+  }  
+
+  &__flex {
+    display: flex;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,9 +1,11 @@
-import React from "react"
-import { Button } from 'antd';
-import { Link } from "gatsby"
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "gatsby";
+import MediaQuery from "react-responsive";
 import * as styles from "./index.module.scss";
 
 import { Attractions, Layout, Image, Navbar, Modal, Photos, Reviews, Footer, SEO } from "../components";
+import { AelanPlaceFontLogo, AelanPlaceFontLogoMobile } from "../../assets";
 import { post } from "../helpers";
 import CMS from "../../content/homepageCMS.json";
 
@@ -43,9 +45,9 @@ class IndexPage extends React.Component<any, any> {
 
     const { showAttractions, showPhotos, showReviews } = this.state;
 
-    const hasReachedShowAttractions = (window.scrollY + attractionsRef.getBoundingClientRect().top) / 3 < window.scrollY;
+    const hasReachedShowAttractions = (window.scrollY + attractionsRef.getBoundingClientRect().top) / 2 < window.scrollY;
     const hasReachedShowPhotos = (window.scrollY + photosRef.getBoundingClientRect().top) / 2 < window.scrollY;
-    const hasReachedShowReviews = (window.scrollY + reviewsRef.getBoundingClientRect().top) / 2 < window.scrollY;
+    const hasReachedShowReviews = (window.scrollY + reviewsRef.getBoundingClientRect().top) / 1.5 < window.scrollY;
 
     if (showAttractions !== hasReachedShowAttractions) {
       this.setState({ showAttractions: hasReachedShowAttractions });
@@ -91,25 +93,32 @@ class IndexPage extends React.Component<any, any> {
     return (
       <Layout>
           <SEO title="Overview" />
-          <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>      
           <Modal showModal={menuToggled} />
+          <Navbar menuToggled={menuToggled} handleToggle={this.toggleMenu}/>      
           {!menuToggled &&
             <>
               <div className={styles.introContainer}>          
                 <Image filename="aelan_8.jpg" imgStyle={{ filter: 'brightness(0.5)'}} style={{ height: '100vh' }}/> 
                 <div className={styles.introContainer_main}>
-                  <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>
-                  <p className={styles.introContainer_subtitle}>{CMS.landingSubtitle}</p>
-                  <div className={styles.introContainer_buttons}>
-                    <Button type="primary" shape="round" size="large"><Link to="/apartments">{CMS.exploreBtn}</Link></Button>
-                    <Button ghost shape="round" size="large"><Link to="/contact">{CMS.contactBtn}</Link></Button>
+                  <h1 className={styles.introContainer_title}>{CMS.landingTitle}</h1>                  
+                  <MediaQuery minDeviceWidth={992}>
+                    <AelanPlaceFontLogo className={styles.introContainer_locationName}/>
+                  </MediaQuery>
+                  <MediaQuery maxDeviceWidth={992}>
+                    <AelanPlaceFontLogoMobile className={styles.introContainer_locationName}/>
+                  </MediaQuery>
+                  <h1 className={styles.introContainer_title}>{CMS.landingSubtitle}</h1>
+                  <br/>
+                  <div className={styles.introContainer_links}>
+                    <Link to="/apartments" className={styles.introContainer_links_item}>{CMS.exploreBtn}</Link>
+                    <Link to="/contact" className={styles.introContainer_links_item}>{CMS.contactBtn}</Link>
                     {/* <Button type="primary" shape="round" size="large" onClick={this.fetchAvailabilities}>Test</Button> */}
                   </div>
                 </div>
-                <p className={styles.introContainer_scroll}><span className={styles.introContainer_scroll_arrow}/>Scroll</p>
+                <ScrollLink className={styles.introContainer_scroll} to="photos_section" smooth={true}><span className={styles.introContainer_scroll_arrow}/></ScrollLink>                
               </div>
-              <Attractions show={showAttractions} htmlRef={this.attractionsRef}/>
               <Photos show={showPhotos} htmlRef={this.photosRef}/>
+              <Attractions show={showAttractions} htmlRef={this.attractionsRef}/>
               <Reviews show={showReviews} htmlRef={this.reviewsRef}/>
               <Footer />
             </>

@@ -49,7 +49,8 @@ class About extends React.Component<any, any> {
             </div>
             <div className={styles.aboutContent_item}>
               <h2 className={styles.aboutContent_header}>{CMS.sectionTitle}</h2>
-              <p dangerouslySetInnerHTML={{ __html: sanitizeHTML(CMS.sectionDescription) }}/>
+              <p className={styles.aboutContent_description}
+                dangerouslySetInnerHTML={{ __html: sanitizeHTML(CMS.sectionDescription) }}/>
             </div>
           </div>
           <Footer />

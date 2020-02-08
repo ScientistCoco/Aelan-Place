@@ -1,38 +1,46 @@
-@import '../styles/fonts.scss';
 @import '../styles/breakpoints.scss';
+@import '../styles/fonts.scss';
 
 .reviewsContainer {
-  padding: 100px 20px;
-  text-align: center;
+  padding: 100px $mobile-horizontal-padding;  
   transition: opacity 0.5s ease-in-out;
   
   @include lg {
     padding: 100px 80px;
+    text-align: center;
   }
 
   &_title {
-    font-family: $mainFontFamily;
-    font-weight: bold;
+    @include headerFont;
+    
+    @include lg {
+      text-align: center;
+    }
   }  
 
   &__show {
     opacity: 1;
-    animation: slideUp 1s ease-in-out;
+    animation: slideIn 1s ease-in-out;
   }
 
   &__hide {
     opacity: 0;
-    animation: slideDown 1s ease-in-out;
+    animation: slideOut 1s ease-in-out;
   }
 }
 
 .reviewsComment {
+  @include descriptionFont;
+
+  font-style: italic;
   max-width: 100em;
-  padding: 0 2em;
+  padding: 0 1rem;
 
   &_container {
     display: flex;
-    padding: 20px 0;    
+    height: 15rem;
+    align-items: center;
+    padding: 1rem 0;    
     flex-direction: column;
 
     @include lg {
@@ -41,30 +49,30 @@
   }
 
   &_description {
-    font-style: italic;
-    padding: 10px 0;
+    padding: 1rem 0;
   }
 
   &_user {
-    color: rgb(165, 165, 165);
+    font-family: $paragraphFontFamily;
+    font-style: normal;
+    font-weight: 500;
   }
 }
 
-
-@keyframes slideUp {
+@keyframes slideIn {
   0% {
-    transform: translateY(100px);
+    transform: translateX(-50px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-@keyframes slideDown {
+@keyframes slideOut {
   0% {
-    transform: translateY(0);
+    transform: translateX(0);  
   }
   100% {
-    transform: translateY(-80px);
+    transform: translateX(-50px);
   }
 }

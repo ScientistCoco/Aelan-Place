@@ -10,6 +10,8 @@ $screen-lg-min: 992px;
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
+$mobile-horizontal-padding: 1.5rem;
+
 /** Mixins **/
 // Small devices
 @mixin sm {
